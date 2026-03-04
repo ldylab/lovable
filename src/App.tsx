@@ -7,6 +7,8 @@ import Index from "./pages/Index";
 import Academy from "./pages/Academy";
 import Article1 from "./pages/Article1";
 import About from "./pages/About";
+import Wiki from "./pages/Wiki";
+import WikiBucketTrap from "./pages/WikiBucketTrap";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -22,6 +24,8 @@ const App = () => (
           <Route path="/academy" element={<Academy />} />
           <Route path="/academy/article1" element={<Article1 />} />
           <Route path="/about" element={<About />} />
+          <Route path="/wiki" element={<Wiki />} />
+          <Route path="/wiki/bucket-trap" element={<WikiBucketTrap />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

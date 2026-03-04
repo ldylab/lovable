@@ -23,6 +23,9 @@ const Navbar = () => {
           <a className="text-[11px] font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/#process-roadmap">
             How it works
           </a>
+          <a className="text-[11px] font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/wiki">
+            Wiki
+          </a>
           <div className="nav-item-academy relative group h-20 flex items-center">
             <a className="text-[11px] font-bold text-foreground/60 group-hover:text-foreground uppercase tracking-[0.2em] transition-colors flex items-center gap-1.5 cursor-pointer" href="#">
               Pest Academy
@@ -130,6 +133,7 @@ const Navbar = () => {
       {mobileOpen && (
         <div className="md:hidden bg-background border-t border-border px-6 py-8 space-y-6">
           <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/#process-roadmap">How it works</a>
+          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/wiki">Wiki</a>
           <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="#">Pest Academy</a>
           <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/about">About Us</a>
           <a className="block bg-primary text-foreground text-sm font-black uppercase tracking-widest px-6 py-4 rounded-md text-center mt-4" href="#">

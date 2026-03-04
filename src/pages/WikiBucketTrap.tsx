@@ -2,18 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import {
-  Settings,
-  List,
-  AlertTriangle,
-  Zap,
-  Target,
-  CheckCircle,
-  X,
-  ShoppingCart,
-  ChevronRight,
-  Info,
-} from "lucide-react";
+import { Settings, List, TriangleAlert as AlertTriangle, Zap, Target, CircleCheck as CheckCircle, X, ShoppingCart, ChevronRight, Info } from "lucide-react";
 
 const tocSections = [
   { id: "overview", label: "Overview", icon: Info },

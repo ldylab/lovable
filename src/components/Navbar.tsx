@@ -129,14 +129,14 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu — absolutely positioned so it overlays content without shifting layout */}
       {mobileOpen && (
-        <div className="md:hidden bg-background border-t border-border px-6 py-8 space-y-6">
-          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/#process-roadmap">How it works</a>
-          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/wiki">Wiki</a>
-          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="#">Pest Academy</a>
-          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/about">About Us</a>
-          <a className="block bg-primary text-foreground text-sm font-black uppercase tracking-widest px-6 py-4 rounded-md text-center mt-4" href="#">
+        <div className="md:hidden absolute top-full left-0 w-full bg-background border-t border-border px-6 py-8 space-y-6 shadow-lg z-50">
+          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/#process-roadmap" onClick={() => setMobileOpen(false)}>How it works</a>
+          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/wiki" onClick={() => setMobileOpen(false)}>Wiki</a>
+          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="#" onClick={() => setMobileOpen(false)}>Pest Academy</a>
+          <a className="block text-sm font-bold text-foreground/70 hover:text-foreground uppercase tracking-widest" href="/about" onClick={() => setMobileOpen(false)}>About Us</a>
+          <a className="block bg-primary text-foreground text-sm font-black uppercase tracking-widest px-6 py-4 rounded-md text-center mt-4" href="#" onClick={() => setMobileOpen(false)}>
             Start Diagnosis
           </a>
         </div>

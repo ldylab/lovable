@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Settings, List, TriangleAlert as AlertTriangle, Zap, Target, CircleCheck as CheckCircle, X, ShoppingCart, ChevronRight, Info } from "lucide-react";
+import { Settings, List, TriangleAlert as AlertTriangle, Zap, Target, CircleCheck as CheckCircle, X, ChevronRight, Info } from "lucide-react";
 
 const tocSections = [
   { id: "overview", label: "Overview", icon: Info },
@@ -36,6 +36,44 @@ const WikiBucketTrap = () => {
     const el = document.getElementById(id);
     if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
   };
+
+  const statCard = (
+    <div className="border border-border overflow-hidden">
+      <div className="relative w-full aspect-[4/3] bg-muted flex items-center justify-center">
+        <div
+          className="w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage:
+              "url(https://images.pexels.com/photos/4308049/pexels-photo-4308049.jpeg?auto=compress&cs=tinysrgb&w=600)",
+            filter: "grayscale(20%)",
+          }}
+        />
+        <div className="absolute top-2 right-2 bg-primary px-3 py-1">
+          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-foreground">
+            Hardware
+          </span>
+        </div>
+      </div>
+
+      <div className="divide-y divide-border">
+        {[
+          { label: "Classification", value: "Trap, Mechanical", valueClass: "" },
+          { label: "Primary Target", value: "Mice", valueClass: "font-bold" },
+          { label: "Efficacy Rating", value: "S-TIER", valueClass: "bg-primary text-primary-foreground px-2 py-0.5 text-xs font-black" },
+          { label: "Pet Safe", value: "⚠ Conditional", valueClass: "text-[hsl(var(--safety-yellow))] font-semibold" },
+          { label: "Cost Profile", value: "$$", valueClass: "" },
+          { label: "Reusability", value: "Multi-Catch", valueClass: "text-green-600 font-bold" },
+        ].map((stat, i) => (
+          <div key={i} className="flex items-center justify-between px-4 py-3">
+            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground">
+              {stat.label}
+            </span>
+            <span className={`text-sm ${stat.valueClass}`}>{stat.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -74,14 +112,19 @@ const WikiBucketTrap = () => {
           </aside>
 
           {/* Center Article Content */}
-          <main className="flex-1 min-w-0 border-x border-border px-8 md:px-14 py-12">
+          <main className="flex-1 min-w-0 border-x border-border px-6 md:px-14 py-12">
             {/* Breadcrumb */}
             <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-8">
               <Link to="/wiki" className="hover:text-foreground transition-colors">Wiki</Link>
               <ChevronRight size={10} />
-              <span className="hover:text-foreground transition-colors cursor-pointer">Hardware</span>
+              <Link to="/wiki#hardware" className="hover:text-foreground transition-colors">Hardware</Link>
               <ChevronRight size={10} />
               <span className="text-foreground">The Bucket Trap</span>
+            </div>
+
+            {/* Stat card — shown inline on small/medium screens, hidden on xl (shown in sidebar) */}
+            <div className="xl:hidden mb-10">
+              {statCard}
             </div>
 
             {/* Title */}
@@ -226,54 +269,10 @@ const WikiBucketTrap = () => {
             </section>
           </main>
 
-          {/* Right Sidebar — Stat Card */}
+          {/* Right Sidebar — Stat Card (xl screens only) */}
           <aside className="hidden xl:block w-[280px] flex-shrink-0">
             <div className="sticky top-24 py-12 pl-8">
-              <div className="border border-border overflow-hidden">
-                {/* Image placeholder */}
-                <div className="relative w-full aspect-[4/3] bg-muted flex items-center justify-center">
-                  <div
-                    className="w-full h-full bg-cover bg-center"
-                    style={{
-                      backgroundImage:
-                        "url(https://images.pexels.com/photos/4308049/pexels-photo-4308049.jpeg?auto=compress&cs=tinysrgb&w=600)",
-                      filter: "grayscale(20%)",
-                    }}
-                  />
-                  <div className="absolute top-2 right-2 bg-primary px-3 py-1">
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary-foreground">
-                      Hardware
-                    </span>
-                  </div>
-                </div>
-
-                {/* Stats */}
-                <div className="divide-y divide-border">
-                  {[
-                    { label: "Classification", value: "Trap, Mechanical", valueClass: "" },
-                    { label: "Primary Target", value: "Mice", valueClass: "font-bold" },
-                    { label: "Efficacy Rating", value: "S-TIER", valueClass: "bg-primary text-primary-foreground px-2 py-0.5 text-xs font-black" },
-                    { label: "Pet Safe", value: "⚠ Conditional", valueClass: "text-[hsl(var(--safety-yellow))] font-semibold" },
-                    { label: "Cost Profile", value: "$$", valueClass: "" },
-                    { label: "Reusability", value: "Multi-Catch", valueClass: "text-green-600 font-bold" },
-                  ].map((stat, i) => (
-                    <div key={i} className="flex items-center justify-between px-4 py-3">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground">
-                        {stat.label}
-                      </span>
-                      <span className={`text-sm ${stat.valueClass}`}>{stat.value}</span>
-                    </div>
-                  ))}
-                </div>
-
-                {/* CTA */}
-                <div className="p-4">
-                  <button className="w-full bg-foreground hover:bg-foreground/90 text-background text-[11px] font-black uppercase tracking-[0.18em] px-4 py-4 flex items-center justify-center gap-2 transition-colors duration-200">
-                    <ShoppingCart size={14} />
-                    Procure Intel
-                  </button>
-                </div>
-              </div>
+              {statCard}
             </div>
           </aside>
         </div>

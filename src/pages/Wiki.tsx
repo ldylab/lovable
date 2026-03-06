@@ -58,7 +58,7 @@ const Wiki = () => {
           {wikiCategories.map((cat, ci) => {
             const Icon = cat.icon;
             return (
-              <div key={ci}>
+              <div key={ci} id={cat.label.toLowerCase()}>
                 <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
                   <Icon size={18} className="text-primary" />
                   <h2 className="text-sm font-black uppercase tracking-[0.2em] text-foreground">

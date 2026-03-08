@@ -3,16 +3,28 @@ import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
-    question: "How do I identify a rodent infestation?",
-    answer: "Common signs include droppings, gnaw marks on structures, scratching noises in attics, and visible nests made of shredded materials.",
+    question: "How do I know if I have a mouse or a rat?",
+    answer: "Look at the droppings. Mouse feces are the size of rice grains; rat feces are the size of raisins. Never guess based on scratching noises. You need visual proof to buy the right hardware.",
   },
   {
-    question: "What steps can I take to prevent rodents?",
-    answer: "Seal all entry points larger than a pencil eraser, eliminate food sources, reduce clutter, and maintain cleanliness. Steel wool and copper mesh are excellent for sealing gaps.",
+    question: "Should I hire a professional or do it myself?",
+    answer: "Do it yourself. Most exterminators charge $300 just to set the exact same $2 snap traps you can buy at a hardware store. Follow our protocols and fix it permanently for a fraction of the cost.",
   },
   {
-    question: "Are DIY steps effective?",
-    answer: "Yes, when done correctly. The key is a systematic approach: diagnose, build trust with pre-baiting, deploy the right traps, and fortify with exclusion methods.",
+    question: "Do ultrasonic plug-ins or peppermint oils work?",
+    answer: "No. They are scams. Sound waves cannot penetrate the drywall where mice nest, and rodents adapt to peppermint smells within 48 hours. Stop trying to annoy them out. You must catch them.",
+  },
+  {
+    question: "I keep catching mice, but they keep coming back. Why?",
+    answer: "You are treating the symptom, not the root cause. Unless you find and seal their exterior entry points (any gap larger than 1/4 inch) with copper mesh and silicone, you will be trapping mice forever.",
+  },
+  {
+    question: "Why shouldn't I use poison indoors?",
+    answer: "Poisoned rodents rarely die in the open. They die inside your walls or HVAC systems. The rotting carcass creates an unbearable odor for weeks and attracts insects. Always use mechanical traps indoors.",
+  },
+  {
+    question: "Are snap traps safe around pets?",
+    answer: "No. Exposed traps will snap curious paws and noses. If you have pets, you must use enclosed trap stations or place traps strictly in \"Zero-Access Zones\" (locked attics, drop ceilings, or behind heavy appliances).",
   },
 ];
 
@@ -26,7 +38,7 @@ const FAQSection = () => {
           <div className="lg:col-span-5">
             <h2 className="text-4xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight mb-6">Rodent Control FAQs</h2>
             <p className="text-swiss-light-text text-lg leading-relaxed mb-8">
-              Everything you need to know about identifying, managing, and preventing rodent issues in your space.
+              The unfiltered truth. No marketing fluff, just science-backed protocols.
             </p>
             <a className="text-primary font-bold underline underline-offset-4 hover:text-primary/80 transition-colors" href="#">
               Chat with our experts

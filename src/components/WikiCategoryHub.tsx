@@ -1,4 +1,4 @@
-import { Settings, Layers, AlertOctagon, Microscope } from "lucide-react";
+import { Settings, Layers, OctagonAlert as AlertOctagon, Microscope } from "lucide-react";
 
 const categories = [
   {

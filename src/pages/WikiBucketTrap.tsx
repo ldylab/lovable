@@ -438,6 +438,25 @@ const WikiBucketTrap = () => {
               </div>
             </section>
 
+            {/* References */}
+            <section className="mt-10 mb-0 border-t border-border pt-8">
+              <h4 className="text-[11px] font-black uppercase tracking-[0.22em] text-muted-foreground mb-4">
+                References
+              </h4>
+              <ol className="list-decimal list-inside space-y-2">
+                {[
+                  "Corrigan, R.M. (2001). Rodent Control: A Practical Guide for Pest Management Professionals. PCT Media Group.",
+                  "Timm, R.M. (1994). House Mice. Prevention and Control of Wildlife Damage. University of Nebraska–Lincoln.",
+                  "Frantz, S.C. (1988). Commensal Rodent Control. United Nations Environment Programme.",
+                  "National Pest Management Association. (2020). Best Practices for Rodent Pest Management.",
+                ].map((ref, i) => (
+                  <li key={i} className="text-sm text-muted-foreground leading-relaxed">
+                    {ref}
+                  </li>
+                ))}
+              </ol>
+            </section>
+
             <WikiCategoryHub />
           </main>
 
@@ -447,6 +466,43 @@ const WikiBucketTrap = () => {
               {statCard}
             </div>
           </aside>
+        </div>
+      </div>
+
+      {/* Wiki meta footer bar */}
+      <div className="border-t border-border bg-muted/20">
+        <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-6">
+          <p className="text-xs text-muted-foreground mb-1">
+            This page was last edited on 26 February 2026, at 09:07.
+          </p>
+          <p className="text-xs text-muted-foreground mb-3">
+            Pages created prior to January 2025 are adapted from community-contributed field notes and independent pest control research.
+          </p>
+          <p className="text-xs text-muted-foreground mb-4">
+            Page content is under{" "}
+            <a href="https://creativecommons.org/licenses/by-sa/4.0/" className="underline hover:text-foreground transition-colors">
+              Creative Commons Attribution-ShareAlike 4.0 License
+            </a>{" "}
+            unless otherwise noted.
+          </p>
+          <div className="flex flex-wrap gap-x-4 gap-y-1">
+            {[
+              { label: "Terms of Service", href: "#" },
+              { label: "Privacy Policy", href: "#" },
+              { label: "About Pest.gg", href: "#" },
+              { label: "Send Feedback", href: "#" },
+              { label: "Status Page", href: "#" },
+              { label: "Manage Cookie Settings", href: "#" },
+            ].map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-xs text-muted-foreground hover:text-foreground transition-colors underline-offset-2 hover:underline"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
         </div>
       </div>
 

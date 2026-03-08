@@ -27,15 +27,16 @@ const WikiEntryCard = ({ href, img, tier, title, subtitle }: WikiEntryCardProps)
     className="not-prose group flex items-center justify-between border border-border hover:border-primary hover:bg-primary/5 transition-all duration-200"
   >
     <div className="flex items-center gap-4">
-      <div className="w-[72px] h-[72px] flex-shrink-0 overflow-hidden bg-muted">
+      <div style={{ width: 72, height: 72, flexShrink: 0, overflow: "hidden" }} className="bg-muted">
         {img ? (
           <img
             src={img}
             alt={title}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+            style={{ width: 72, height: 72, objectFit: "cover", display: "block", margin: 0, borderRadius: 0 }}
+            className="group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
-          <div className="w-full h-full bg-muted" />
+          <div style={{ width: 72, height: 72 }} className="bg-muted" />
         )}
       </div>
       <div>

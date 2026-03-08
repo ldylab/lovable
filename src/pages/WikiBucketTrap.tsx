@@ -437,6 +437,8 @@ const WikiBucketTrap = () => {
                 </p>
               </div>
             </section>
+
+            <WikiCategoryHub />
           </main>
 
           {/* Right Sidebar — Stat Card (xl screens only) */}
@@ -448,7 +450,6 @@ const WikiBucketTrap = () => {
         </div>
       </div>
 
-      <WikiCategoryHub />
       <Footer />
     </div>
   );

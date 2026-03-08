@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Settings, Layers, OctagonAlert as AlertOctagon, Microscope } from "lucide-react";
 
 const categories = [
@@ -5,7 +6,7 @@ const categories = [
     id: "hardware",
     icon: Settings,
     label: "HARDWARE",
-    color: "text-foreground",
+    isShame: false,
     items: [
       { label: "The Bucket Trap", href: "/wiki/bucket-trap" },
       { label: "The Snap Trap", href: "/wiki/snap-trap" },
@@ -17,7 +18,7 @@ const categories = [
     id: "exclusion",
     icon: Layers,
     label: "EXCLUSION",
-    color: "text-foreground",
+    isShame: false,
     items: [
       { label: "Copper Mesh & Steel Wool", href: "/wiki/copper-mesh" },
       { label: "Heavy-Duty Silicone", href: "/wiki/silicone-sealant" },
@@ -29,7 +30,7 @@ const categories = [
     id: "shame",
     icon: AlertOctagon,
     label: "HALL OF SHAME",
-    color: "text-red-600",
+    isShame: true,
     items: [
       { label: "Ultrasonic Repellers", href: "/wiki/ultrasonic-repellers" },
       { label: "Peppermint Oil", href: "/wiki/peppermint-oil" },
@@ -41,7 +42,7 @@ const categories = [
     id: "biology",
     icon: Microscope,
     label: "BIOLOGY",
-    color: "text-foreground",
+    isShame: false,
     items: [
       { label: "House Mouse", href: "/wiki/house-mouse" },
       { label: "Norway Rat", href: "/wiki/norway-rat" },
@@ -51,49 +52,64 @@ const categories = [
 ];
 
 const WikiCategoryHub = () => {
-  return (
-    <section className="w-full border-t border-border bg-[#F9F9F9]">
-      <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 py-14 md:py-20">
-        <div className="flex items-center gap-3 mb-10">
-          <Layers size={18} className="text-muted-foreground" strokeWidth={1.5} />
-          <p className="text-xs font-bold uppercase tracking-[0.25em] text-muted-foreground">
-            Explore the Pest.gg Wiki
-          </p>
-        </div>
+  const [activeTab, setActiveTab] = useState("hardware");
+  const active = categories.find((c) => c.id === activeTab)!;
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10">
+  return (
+    <div className="mt-12 border border-border">
+      <div className="px-5 pt-5 pb-0 border-b border-border bg-muted/30">
+        <p className="text-[10px] font-black uppercase tracking-[0.28em] text-muted-foreground mb-4">
+          Explore the Pest.gg Wiki
+        </p>
+        <div className="flex gap-0 -mb-px overflow-x-auto">
           {categories.map((cat) => {
             const Icon = cat.icon;
-            const isShame = cat.id === "shame";
+            const isActive = activeTab === cat.id;
             return (
-              <div key={cat.id}>
-                <div className={`flex items-center gap-2 mb-4 ${isShame ? "text-red-600" : "text-foreground"}`}>
-                  <Icon size={14} strokeWidth={2} />
-                  <p className={`text-[11px] font-black uppercase tracking-[0.18em] ${cat.color}`}>
-                    {cat.label}
-                  </p>
-                </div>
-                <ul className="space-y-2.5">
-                  {cat.items.map((item) => (
-                    <li key={item.href}>
-                      <a
-                        href={item.href}
-                        className={`text-sm font-semibold text-foreground leading-snug relative inline-block
-                          after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0 after:bg-primary
-                          after:transition-all after:duration-200 hover:after:w-full hover:text-primary transition-colors duration-200
-                          ${isShame ? "hover:text-red-600 after:bg-red-600" : ""}`}
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <button
+                key={cat.id}
+                onClick={() => setActiveTab(cat.id)}
+                className={`flex items-center gap-1.5 px-4 py-2.5 text-[11px] font-black uppercase tracking-[0.15em] border-b-2 transition-colors duration-150 whitespace-nowrap
+                  ${isActive
+                    ? cat.isShame
+                      ? "border-red-500 text-red-600"
+                      : "border-primary text-foreground"
+                    : cat.isShame
+                      ? "border-transparent text-muted-foreground hover:text-red-500"
+                      : "border-transparent text-muted-foreground hover:text-foreground"
+                  }`}
+              >
+                <Icon size={12} strokeWidth={2.2} />
+                {cat.label}
+              </button>
             );
           })}
         </div>
       </div>
-    </section>
+
+      <div className="px-5 py-5">
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-1">
+          {active.items.map((item) => (
+            <li key={item.href}>
+              <a
+                href={item.href}
+                className={`text-sm font-semibold leading-snug py-1.5 flex items-center gap-2 group transition-colors duration-150
+                  ${active.isShame ? "text-foreground hover:text-red-600" : "text-foreground hover:text-primary"}`}
+              >
+                <span className={`w-1 h-1 rounded-full flex-shrink-0 transition-colors duration-150
+                  ${active.isShame ? "bg-red-400 group-hover:bg-red-600" : "bg-muted-foreground group-hover:bg-primary"}`}
+                />
+                <span className={`relative after:absolute after:bottom-0 after:left-0 after:h-[1.5px] after:w-0
+                  after:transition-all after:duration-200 group-hover:after:w-full
+                  ${active.isShame ? "after:bg-red-500" : "after:bg-primary"}`}>
+                  {item.label}
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };
 

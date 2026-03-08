@@ -30,24 +30,14 @@ const WikiEntryCard = ({ href, img, title, subtitle, class: className, target }:
         )}
       </div>
       <div className="py-1">
-        {(className || target) && (
-          <div className="flex items-center gap-1 mb-1">
-            {className && (
-              <span className="text-[9px] font-black uppercase tracking-[0.12em] px-1.5 py-px inline-block bg-foreground text-background">
-                {className}
-              </span>
-            )}
-            {target && (
-              <span className="text-[9px] font-black uppercase tracking-[0.12em] px-1.5 py-px inline-block bg-muted text-muted-foreground">
-                {target}
-              </span>
-            )}
-          </div>
-        )}
         <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
           {title}
         </p>
-        <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>
+        {(className || target) && (
+          <p className="text-xs text-muted-foreground mt-0.5">
+            {[className, target].filter(Boolean).join(" · ")}
+          </p>
+        )}
       </div>
     </div>
     <ArrowRight

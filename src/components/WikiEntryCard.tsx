@@ -57,7 +57,7 @@ const WikiEntryCard = ({
       </div>
       <div className="flex items-center px-4 self-stretch">
         <span className="text-xs font-bold uppercase tracking-widest text-primary group-hover:underline whitespace-nowrap">
-          VIEW SCIENTIFIC PROOF ➔
+          EXPLORE IN THE WIKI ➔
         </span>
       </div>
     </Link>

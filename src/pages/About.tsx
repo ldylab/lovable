@@ -9,7 +9,7 @@ const About = () => {
       <main className="flex flex-col">
 
         {/* Hero */}
-        <section className="w-full min-h-screen bg-[#f5f5f0] flex items-center relative overflow-hidden">
+        <section className="relative w-full h-[calc(100vh-80px)] min-h-[600px] bg-[#f5f5f0] overflow-hidden">
           <div className="absolute inset-0">
             <img
               src="https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=1600"
@@ -17,13 +17,15 @@ const About = () => {
               className="w-full h-full object-cover opacity-5 grayscale"
             />
           </div>
-          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32">
-            <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-8 block">
-              Established 2024 / Version 1.0
-            </span>
-            <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[108px] font-extrabold text-foreground uppercase leading-[0.88] tracking-tight max-w-5xl">
-              The Pest Control<br />Industry Is Broken.<br />We Fixed It.
-            </h1>
+          <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end py-16">
+            <div className="flex flex-col md:flex-row items-end justify-between w-full gap-8 md:gap-0">
+              <div className="w-full md:w-2/3">
+                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-extrabold text-foreground uppercase leading-[0.9] tracking-tight">
+                  The Pest Control<br />Industry Is Broken.<br />We Fixed It.
+                </h1>
+                <div className="w-32 h-1.5 bg-safety-yellow mt-8" />
+              </div>
+            </div>
           </div>
         </section>
 

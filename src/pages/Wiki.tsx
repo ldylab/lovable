@@ -9,28 +9,28 @@ const hardwareEntries = [
     tier: "S-TIER",
     target: "Mice",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/4308049/pexels-photo-4308049.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    img: "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
   },
   {
     title: "Snap Trap (Expanded Trigger)",
     tier: "A-TIER",
     target: "Mice",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/5961893/pexels-photo-5961893.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    img: "https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
   },
   {
     title: "Electronic Zapper",
     tier: "A-TIER",
     target: "Mice & Rats",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/257736/pexels-photo-257736.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    img: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
   },
   {
     title: "Bait Station (Tamper-Resistant)",
     tier: "B-TIER",
     target: "Rats",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/1108572/pexels-photo-1108572.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    img: "https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
   },
 ];
 
@@ -71,7 +71,7 @@ const scamEntries = [
     tier: "F-TIER",
     target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/3780104/pexels-photo-3780104.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    img: "https://images.pexels.com/photos/1472443/pexels-photo-1472443.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
   },
   {
     title: "Peppermint Oil",
@@ -85,7 +85,7 @@ const scamEntries = [
     tier: "D-TIER",
     target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/4226896/pexels-photo-4226896.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    img: "https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
   },
   {
     title: "Natural Predator Urine",

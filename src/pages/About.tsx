@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { RefreshCw, LayoutGrid, Search } from "lucide-react";
 
 const About = () => {
   return (
@@ -96,40 +95,34 @@ const About = () => {
         {/* Core Philosophy */}
         <section className="w-full bg-background border-t border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="flex items-center gap-3 mb-12">
-              <div className="w-1 h-5 bg-foreground" />
-              <span className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
-                Our Core Philosophy
-              </span>
-            </div>
+            <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase leading-[1] tracking-tight text-foreground mb-12">
+              Our Core<br />Philosophy
+            </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-              {[
-                {
-                  icon: RefreshCw,
-                  title: "Science, Not Superstition",
-                  desc: "Every recommendation is backed by peer-reviewed entomology. If it hasn't been proven in a lab, it doesn't make it onto our platform.",
-                },
-                {
-                  icon: LayoutGrid,
-                  title: "Exclusion Over Extermination",
-                  desc: "Killing is temporary fix. Building them out is a permanent solution. We focus on mechanical barriers and structural integrity.",
-                },
-                {
-                  icon: Search,
-                  title: "Absolute Transparency",
-                  desc: "We disclose ingredients, toxicity levels, and manufacturer data. No hidden agendas. No paid product placements.",
-                },
-              ].map((item, i) => (
-                <div key={i} className="border border-border p-8">
-                  <div className="mb-5">
-                    <item.icon size={22} className="text-foreground" />
-                  </div>
-                  <h3 className="font-extrabold text-foreground uppercase tracking-tight text-sm leading-tight mb-3">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                </div>
-              ))}
+              <div className="p-10 md:p-12" style={{ backgroundColor: "#83AED4" }}>
+                <h3 className="font-extrabold text-white uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
+                  Science,<br />Not<br />Superstition
+                </h3>
+                <p className="text-white/85 text-base md:text-lg leading-relaxed">
+                  Every recommendation is backed by peer-reviewed entomology. If it hasn't been proven in a lab, it doesn't make it onto our platform.
+                </p>
+              </div>
+              <div className="p-10 md:p-12" style={{ backgroundColor: "#6F9A63" }}>
+                <h3 className="font-extrabold text-white uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
+                  Exclusion<br />Over<br />Extermination
+                </h3>
+                <p className="text-white/85 text-base md:text-lg leading-relaxed">
+                  Killing is a temporary fix. Building them out is a permanent solution. We focus on mechanical barriers and structural integrity.
+                </p>
+              </div>
+              <div className="p-10 md:p-12" style={{ backgroundColor: "#D75536" }}>
+                <h3 className="font-extrabold text-white uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
+                  Absolute<br />Trans-<br />parency
+                </h3>
+                <p className="text-white/85 text-base md:text-lg leading-relaxed">
+                  We disclose ingredients, toxicity levels, and manufacturer data. No hidden agendas. No paid product placements.
+                </p>
+              </div>
             </div>
           </div>
         </section>

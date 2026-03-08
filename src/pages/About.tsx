@@ -95,50 +95,71 @@ const About = () => {
         {/* Core Philosophy */}
         <section className="w-full bg-background border-t border-border py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase leading-[1] tracking-tight text-foreground mb-12">
-              Our Core<br />Philosophy
-            </h2>
+            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-4">
+              Our Core Philosophy
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-10 md:p-12" style={{ backgroundColor: "#83AED4" }}>
                 <h3 className="font-extrabold text-foreground uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
-                  Science, Not<br />Superstition
+                  Science, Not<br />Guesswork
                 </h3>
                 <p className="text-foreground/75 text-base md:text-lg leading-relaxed">
-                  Every recommendation is backed by peer-reviewed entomology. If it hasn't been proven in a lab, it doesn't make it onto our platform.
+                  We rely on rodent biology, not marketing claims. If a trap or spray doesn't work in the real world, we expose it.
                 </p>
               </div>
               <div className="p-10 md:p-12" style={{ backgroundColor: "#6F9A63" }}>
                 <h3 className="font-extrabold text-foreground uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
-                  Exclusion Over<br />Extermination
+                  Seal, Don't<br />Just Kill
                 </h3>
                 <p className="text-foreground/75 text-base md:text-lg leading-relaxed">
-                  Killing is a temporary fix. Building them out is a permanent solution. We focus on mechanical barriers and structural integrity.
+                  Killing a mouse is a temporary fix. Blocking their entry points is a permanent cure. We prioritize physical barriers over endless trapping.
                 </p>
               </div>
               <div className="p-10 md:p-12" style={{ backgroundColor: "#D75536" }}>
                 <h3 className="font-extrabold text-foreground uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
-                  Absolute<br />Transparency
+                  Zero Fluff.<br />Zero Bias.
                 </h3>
                 <p className="text-foreground/75 text-base md:text-lg leading-relaxed">
-                  We disclose ingredients, toxicity levels, and manufacturer data. No hidden agendas. No paid product placements.
+                  No sponsored traps. No fake reviews. We tell you exactly what works, what fails, and what puts your pets at risk.
                 </p>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Manifesto Quote */}
-        <section className="w-full bg-background py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <p className="text-2xl md:text-3xl font-black italic text-foreground tracking-tight leading-snug max-w-4xl">
-              "The mathematical equation to zero infestation."
-            </p>
-            <p className="text-muted-foreground text-base md:text-lg leading-relaxed mt-8 max-w-3xl">
-              We are a community of data-driven problem solvers—engineers, biologists, and homeowners who got tired of the smoke and mirrors. We treat pest control as a logical puzzle: entry points, food sources, and environmental factors. When you solve the variables, the result is always zero.
-            </p>
-            <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mt-6">
-              — The Pest.gg Architects
-            </p>
+        {/* Who We Are */}
+        <section className="w-full bg-background border-t border-border py-16 md:py-24">
+          <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-4">
+                Who We Are
+              </p>
+              <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase leading-[1] tracking-tight text-foreground">
+                Pest Control Is a<br />Math Problem.
+              </h2>
+            </div>
+            <div className="flex flex-col gap-8">
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                We are a group of data-driven homeowners and engineers tired of fake reviews and useless products. We treat infestations as a logical equation:
+              </p>
+              <div className="flex flex-col gap-3">
+                {[
+                  "Find the entry point.",
+                  "Remove the food source.",
+                  "Apply the right hardware.",
+                ].map((step, i) => (
+                  <div key={i} className="flex items-baseline gap-4 border-l-2 border-primary pl-5">
+                    <span className="text-foreground text-base md:text-lg font-bold">{step}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
+                When you control the variables, the result is always zero.
+              </p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground">
+                — The Pest.gg Team
+              </p>
+            </div>
           </div>
         </section>
 

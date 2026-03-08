@@ -100,26 +100,26 @@ const About = () => {
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               <div className="p-10 md:p-12" style={{ backgroundColor: "#83AED4" }}>
-                <h3 className="font-extrabold text-white uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
-                  Science,<br />Not<br />Superstition
+                <h3 className="font-extrabold text-foreground uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
+                  Science, Not<br />Superstition
                 </h3>
-                <p className="text-white/85 text-base md:text-lg leading-relaxed">
+                <p className="text-foreground/75 text-base md:text-lg leading-relaxed">
                   Every recommendation is backed by peer-reviewed entomology. If it hasn't been proven in a lab, it doesn't make it onto our platform.
                 </p>
               </div>
               <div className="p-10 md:p-12" style={{ backgroundColor: "#6F9A63" }}>
-                <h3 className="font-extrabold text-white uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
-                  Exclusion<br />Over<br />Extermination
+                <h3 className="font-extrabold text-foreground uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
+                  Exclusion Over<br />Extermination
                 </h3>
-                <p className="text-white/85 text-base md:text-lg leading-relaxed">
+                <p className="text-foreground/75 text-base md:text-lg leading-relaxed">
                   Killing is a temporary fix. Building them out is a permanent solution. We focus on mechanical barriers and structural integrity.
                 </p>
               </div>
               <div className="p-10 md:p-12" style={{ backgroundColor: "#D75536" }}>
-                <h3 className="font-extrabold text-white uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
-                  Absolute<br />Trans-<br />parency
+                <h3 className="font-extrabold text-foreground uppercase tracking-tight text-2xl md:text-3xl leading-tight mb-5">
+                  Absolute<br />Transparency
                 </h3>
-                <p className="text-white/85 text-base md:text-lg leading-relaxed">
+                <p className="text-foreground/75 text-base md:text-lg leading-relaxed">
                   We disclose ingredients, toxicity levels, and manufacturer data. No hidden agendas. No paid product placements.
                 </p>
               </div>
@@ -128,7 +128,7 @@ const About = () => {
         </section>
 
         {/* Manifesto Quote */}
-        <section className="w-full bg-background border-t border-border py-16 md:py-24">
+        <section className="w-full bg-background py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <p className="text-2xl md:text-3xl font-black italic text-foreground tracking-tight leading-snug max-w-4xl">
               "The mathematical equation to zero infestation."

@@ -9,23 +9,19 @@ type WikiEntryCardProps = {
 };
 
 const tierConfig = (tier: string) => {
-  if (tier === "S-TIER") return { badge: "bg-primary text-primary-foreground", bar: "bg-primary", hover: "hover:border-primary" };
-  if (tier === "A-TIER") return { badge: "bg-foreground text-background", bar: "bg-foreground", hover: "hover:border-foreground" };
-  if (tier === "B-TIER") return { badge: "bg-neutral-400 text-white", bar: "bg-neutral-400", hover: "hover:border-neutral-400" };
-  if (tier === "C-TIER") return { badge: "bg-neutral-300 text-neutral-700", bar: "bg-neutral-300", hover: "hover:border-neutral-400" };
-  if (tier === "D-TIER") return { badge: "bg-orange-500 text-white", bar: "bg-orange-500", hover: "hover:border-orange-500" };
-  if (tier === "F-TIER") return { badge: "bg-red-500 text-white", bar: "bg-red-500", hover: "hover:border-red-500" };
-  return { badge: "bg-neutral-200 text-neutral-600", bar: "bg-neutral-300", hover: "hover:border-neutral-400" };
+  if (tier === "S-TIER") return { badge: "bg-primary text-primary-foreground", bar: "bg-primary", borderHover: "hover:border-primary" };
+  if (tier === "A-TIER") return { badge: "bg-foreground text-background", bar: "bg-foreground", borderHover: "hover:border-foreground" };
+  if (tier === "B-TIER") return { badge: "bg-neutral-400 text-white", bar: "bg-neutral-400", borderHover: "hover:border-neutral-400" };
+  if (tier === "C-TIER") return { badge: "bg-neutral-300 text-neutral-700", bar: "bg-neutral-300", borderHover: "hover:border-neutral-400" };
+  if (tier === "D-TIER") return { badge: "bg-orange-500 text-white", bar: "bg-orange-500", borderHover: "hover:border-orange-500" };
+  if (tier === "F-TIER") return { badge: "bg-red-500 text-white", bar: "bg-red-500", borderHover: "hover:border-red-500" };
+  return { badge: "bg-neutral-200 text-neutral-600", bar: "bg-neutral-300", borderHover: "hover:border-neutral-400" };
 };
 
-const formatSubtitle = (subtitle: string, tier?: string) => {
-  if (tier === "F-TIER" || tier === "D-TIER") {
-    return `CLASS: SCAM | TARGET: ${subtitle.toUpperCase()}`;
-  }
-  if (tier === "S-TIER" || tier === "A-TIER") {
-    return `CLASS: HARDWARE | TARGET: ${subtitle.toUpperCase()}`;
-  }
-  return `TARGET: ${subtitle.toUpperCase()}`;
+const formatMeta = (subtitle: string, tier?: string) => {
+  const target = subtitle.replace(" — ", " / ").toUpperCase();
+  if (tier === "F-TIER" || tier === "D-TIER") return `CLASS: SCAM  ·  TARGET: ${target}`;
+  return `CLASS: HARDWARE  ·  TARGET: ${target}`;
 };
 
 const BucketSVG = () => (
@@ -43,23 +39,23 @@ const BucketSVG = () => (
 );
 
 const WikiEntryCard = ({ href, img, tier, title, subtitle }: WikiEntryCardProps) => {
-  const config = tier ? tierConfig(tier) : { badge: "bg-neutral-200 text-neutral-600", bar: "bg-neutral-300", hover: "hover:border-neutral-400" };
-  const formattedSubtitle = formatSubtitle(subtitle, tier);
+  const config = tier ? tierConfig(tier) : { badge: "bg-neutral-200 text-neutral-600", bar: "bg-neutral-300", borderHover: "hover:border-neutral-400" };
+  const meta = formatMeta(subtitle, tier);
 
   return (
     <Link
       to={href}
-      className={`group not-prose flex items-center gap-0 border border-[#E5E5E5] bg-white transition-all duration-200 ${config.hover} hover:-translate-y-0.5 hover:shadow-md`}
+      className={`group not-prose flex items-stretch border border-[#E5E5E5] bg-white transition-all duration-200 ${config.borderHover} hover:-translate-y-px hover:shadow-sm`}
       style={{ textDecoration: "none" }}
     >
-      <div className={`w-1 self-stretch flex-shrink-0 ${config.bar}`} />
+      <div className={`w-[3px] flex-shrink-0 ${config.bar}`} />
 
-      <div className="w-[80px] h-[80px] flex-shrink-0 m-3 rounded-[4px] border border-[#E5E5E5] bg-[#F9F9F9] overflow-hidden">
+      <div className="w-[72px] flex-shrink-0 overflow-hidden bg-[#F5F5F5] border-r border-[#E5E5E5]">
         {img ? (
           <img
             src={img}
             alt={title}
-            className="w-full h-full object-cover rounded-[3px]"
+            className="w-full h-full object-cover"
             onError={(e) => { (e.currentTarget as HTMLImageElement).style.display = "none"; }}
           />
         ) : (
@@ -67,25 +63,27 @@ const WikiEntryCard = ({ href, img, tier, title, subtitle }: WikiEntryCardProps)
         )}
       </div>
 
-      <div className="flex-1 min-w-0 py-3 pr-2">
-        {tier && (
-          <span className={`text-[9px] font-black uppercase tracking-[0.2em] px-2 py-0.5 inline-block mb-1.5 rounded-[2px] ${config.badge}`}>
-            {tier}
-          </span>
-        )}
-        <p className="text-[17px] font-bold text-black leading-tight">
-          {title}
-        </p>
-        <p className="text-[10px] text-[#666666] mt-1 uppercase tracking-[0.12em] font-mono">
-          {formattedSubtitle}
-        </p>
-      </div>
+      <div className="flex-1 min-w-0 flex items-center gap-4 px-4 py-3">
+        <div className="flex-1 min-w-0">
+          {tier && (
+            <span className={`text-[8px] font-black uppercase tracking-[0.22em] px-1.5 py-px inline-block mb-1.5 ${config.badge}`}>
+              {tier}
+            </span>
+          )}
+          <p className="text-[15px] font-bold text-foreground leading-snug">
+            {title}
+          </p>
+          <p className="text-[10px] text-muted-foreground mt-1 uppercase tracking-[0.14em] font-mono leading-none">
+            {meta}
+          </p>
+        </div>
 
-      <div className="flex-shrink-0 px-5 flex items-center gap-1.5 text-[11px] font-black uppercase tracking-[0.12em] text-[#999999] group-hover:text-black transition-colors whitespace-nowrap">
-        VIEW ENTRY
-        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" className="group-hover:translate-x-0.5 transition-transform">
-          <path d="M2 6h8M7 3l3 3-3 3" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        <div className="flex-shrink-0 flex items-center gap-1 text-[10px] font-bold uppercase tracking-[0.14em] text-muted-foreground group-hover:text-foreground transition-colors whitespace-nowrap pr-1">
+          VIEW ENTRY
+          <svg width="10" height="10" viewBox="0 0 10 10" fill="none" className="group-hover:translate-x-0.5 transition-transform">
+            <path d="M2 5h6M5.5 2.5L8 5l-2.5 2.5" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        </div>
       </div>
     </Link>
   );

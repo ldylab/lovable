@@ -233,16 +233,7 @@ const Article1 = () => {
               <p>Before you start, avoid one specific product: <strong>Ultrasonic Repellers.</strong></p>
               <p>You see ads for them. They claim plug-in devices emit sounds that drive rodents away. They are ineffective.</p>
 
-              {/* Myth Callout Box */}
-              <div className="bg-muted border border-border p-6 my-8 flex gap-4 items-start">
-                <div className="w-10 h-10 bg-destructive/15 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                  <Ban size={20} className="text-destructive" />
-                </div>
-                <div>
-                  <p className="font-black text-foreground uppercase tracking-tight">The "Repeller" Myth</p>
-                  <p className="text-muted-foreground text-sm mt-2 leading-relaxed">Ultrasonic sound devices and peppermint oil sprays are multibillion-dollar industries built on hope, not science. Rodents quickly habituate to static noise or odors if the food source remains.</p>
-                </div>
-              </div>
+              <p>Ultrasonic sound devices and peppermint oil sprays are multibillion-dollar industries built on hope, not science. Rodents quickly habituate to static noise or odors if the food source remains.</p>
               <p><strong>Verdict:</strong> Do not try to annoy them out. You must catch them.</p>
 
               <WikiEntryCard
@@ -323,20 +314,11 @@ const Article1 = () => {
               <h2 id="scenario-c" className="text-2xl md:text-3xl font-black uppercase tracking-tight pt-10">Humane Alternative: The Bucket</h2>
               <p className="text-lg italic text-muted-foreground">For those who prefer no-kill methods, the "multi-catch" bucket trap is the only effective high-volume solution.</p>
 
-              <div id="bucket-method" className="my-8 space-y-5">
-                {[
-                  "Use a 5-gallon bucket with a counter-weighted lid (Flip N Slide style).",
-                  "Apply bait to the center of the lid and the top of the ramp.",
-                  "Check every 12 hours and release at least 1 mile away from home.",
-                ].map((step, i) => (
-                  <div key={i} className="flex items-start gap-4">
-                    <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                      <CheckCircle size={18} className="text-primary-foreground" />
-                    </div>
-                    <p className="text-foreground leading-relaxed">{step}</p>
-                  </div>
-                ))}
-              </div>
+              <ul id="bucket-method" className="my-4 space-y-2 pl-6 list-disc text-foreground">
+                <li>Use a 5-gallon bucket with a counter-weighted lid (Flip N Slide style).</li>
+                <li>Apply bait to the center of the lid and the top of the ramp.</li>
+                <li>Check every 12 hours and release at least 1 mile away from home.</li>
+              </ul>
 
               <div id="false-floor" className="my-6">
                 <h3 className="text-xl font-bold uppercase tracking-tight">The "False Floor" Upgrade</h3>
@@ -352,18 +334,11 @@ const Article1 = () => {
 
               <h2 id="step-4" className="text-2xl md:text-3xl font-black uppercase tracking-tight pt-10">Step 4: What to Avoid (Glue Boards)</h2>
               <p>We strongly advise against using glue traps.</p>
-              <div className="bg-destructive/5 border border-destructive/20 p-6 my-6 space-y-3">
-                {[
-                  { label: "Cruelty", text: "Mice do not die instantly. They suffocate or starve over days." },
-                  { label: "Failure", text: "Adult mice often pull their legs free." },
-                  { label: "Mess", text: "They can drag the sticky tray across your carpet." },
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-3">
-                    <AlertTriangle size={16} className="text-destructive flex-shrink-0 mt-1" />
-                    <p className="text-sm"><strong className="text-foreground">{item.label}:</strong> <span className="text-muted-foreground">{item.text}</span></p>
-                  </div>
-                ))}
-              </div>
+              <ul className="my-4 space-y-2 pl-6 list-disc text-foreground">
+                <li><strong>Cruelty:</strong> Mice do not die instantly. They suffocate or starve over days.</li>
+                <li><strong>Failure:</strong> Adult mice often pull their legs free.</li>
+                <li><strong>Mess:</strong> They can drag the sticky tray across your carpet.</li>
+              </ul>
               <p>For ethical and effective pest management, stick to snap mechanisms or bucket systems.</p>
 
               <WikiEntryCard

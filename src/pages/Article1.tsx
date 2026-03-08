@@ -242,6 +242,8 @@ const Article1 = () => {
                 tier="F-TIER"
                 title="Ultrasonic Repellers"
                 subtitle="All — Proven Ineffective"
+                class="ELECTRONIC"
+                target="ALL RODENTS"
               />
 
               <h2 id="scenario-a" className="text-2xl md:text-3xl font-black uppercase tracking-tight pt-10">Scenario A: The "Minefield" Strategy</h2>
@@ -272,6 +274,8 @@ const Article1 = () => {
                 tier="A-TIER"
                 title="Snap Trap (Expanded Trigger)"
                 subtitle="Mice"
+                class="TRAP"
+                target="MICE"
               />
 
               {/* Golden Rule Callout */}
@@ -326,9 +330,12 @@ const Article1 = () => {
                 <p className="mt-2">This is arguably the best trap for garages, barns, or basements where infestation levels are high. It is also the best method for catch and release.</p>
                 <WikiEntryCard
                   href="/wiki/bucket-trap"
+                  img="https://images.pexels.com/photos/1108099/pexels-photo-1108099.jpeg?auto=compress&cs=tinysrgb&w=200"
                   tier="S-TIER"
                   title="The Bucket Trap (False Floor Lid)"
                   subtitle="Mice"
+                  class="TRAP"
+                  target="MICE"
                 />
               </div>
 
@@ -347,6 +354,8 @@ const Article1 = () => {
                 tier="D-TIER"
                 title="Glue Traps"
                 subtitle="All — Avoid"
+                class="TRAP"
+                target="ALL RODENTS"
               />
 
               <h2 id="troubleshooting" className="text-2xl md:text-3xl font-black uppercase tracking-tight pt-10">Troubleshooting: Why Tools Fail</h2>
@@ -391,6 +400,8 @@ const Article1 = () => {
                 tier="A-TIER"
                 title="Steel Wool Exclusion"
                 subtitle="All Rodents"
+                class="HARDWARE"
+                target="ALL RODENTS"
               />
 
               <div className="bg-primary/10 border-l-4 border-primary p-4 my-6">

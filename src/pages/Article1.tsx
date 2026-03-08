@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WikiEntryCard from "@/components/WikiEntryCard";
-import { ThumbsUp, MessageCircle, Share2, Bookmark, Pin, Ban, CheckCircle, AlertTriangle, Target, Shield, Crosshair, Bug, MoreHorizontal, Smile } from "lucide-react";
+import { ThumbsUp, MessageCircle, Share2, Bookmark, Pin, Ban, CircleCheck as CheckCircle, TriangleAlert as AlertTriangle, Target, Shield, Crosshair, Bug, MoveHorizontal as MoreHorizontal, Smile } from "lucide-react";
 
 const tocSections = [
   { id: "step-1", label: 'Step 1: Identification (Who is the Intruder?)' },

@@ -17,73 +17,75 @@ const About = () => {
             <h1 className="text-5xl sm:text-6xl md:text-8xl lg:text-[108px] font-extrabold text-foreground uppercase leading-[0.88] tracking-tight max-w-5xl">
               The Pest Control<br />Industry Is Broken.<br />We Fixed It.
             </h1>
-            <p className="text-muted-foreground text-base md:text-lg font-medium leading-relaxed mt-8 max-w-sm">
-              Pest.gg is the honest, science-driven database designed to eliminate the guesswork, the scams, and the infestation. We don't sell fear; we provide the math.
-            </p>
           </div>
         </section>
 
-        {/* Why We Built Section */}
-        <section className="w-full bg-background py-0">
-          <div className="max-w-7xl mx-auto px-6 md:px-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-0">
-              {/* Left: text */}
-              <div className="py-16 md:py-24 pr-0 md:pr-16 flex flex-col justify-center">
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase leading-[1] tracking-tight text-foreground">
-                  Why We Built<br />Pest.gg
-                </h2>
-                <div className="mt-8 space-y-5">
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                    The industry is built on recurring revenue, not permanent solutions. Companies profit from your anxiety by selling "maintenance plans" that only treat the symptoms while ignoring the biology.
-                  </p>
-                  <p className="text-foreground text-base md:text-lg font-bold leading-relaxed">
-                    They sell peppermint oil for rats. They sell ultrasonic plugs for roaches. They sell lies.
-                  </p>
-                  <p className="text-muted-foreground text-base md:text-lg leading-relaxed">
-                    We saw homeowners losing thousands of dollars to high-gloss marketing and low-science methodology. We decided to publish the truth.
-                  </p>
-                </div>
-              </div>
-
-              {/* Right: scam images */}
-              <div className="flex flex-col gap-0">
-                <div className="relative overflow-hidden">
+        {/* Why We Built Section — fullscreen immersive */}
+        <section className="w-full min-h-screen bg-foreground flex items-center relative overflow-hidden">
+          <div className="absolute inset-0">
+            <img
+              src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              alt=""
+              className="w-full h-full object-cover grayscale opacity-10"
+            />
+          </div>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-24 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[0.25em] text-white/50 mb-6">
+                Why We Built Pest.gg
+              </p>
+              <h2 className="text-5xl sm:text-6xl md:text-7xl font-extrabold uppercase leading-[0.92] tracking-tight text-white">
+                Why We<br />Built<br />Pest.gg
+              </h2>
+            </div>
+            <div className="space-y-7">
+              <p className="text-white/60 text-lg md:text-xl leading-relaxed">
+                The industry is built on recurring revenue, not permanent solutions. Companies profit from your anxiety by selling "maintenance plans" that only treat the symptoms while ignoring the biology.
+              </p>
+              <p className="text-white text-lg md:text-xl font-bold leading-relaxed">
+                They sell peppermint oil for rats. They sell ultrasonic plugs for roaches. They sell lies.
+              </p>
+              <p className="text-white/60 text-lg md:text-xl leading-relaxed">
+                We saw homeowners losing thousands of dollars to high-gloss marketing and low-science methodology. We decided to publish the truth.
+              </p>
+              <div className="flex gap-4 pt-4">
+                <div className="relative overflow-hidden flex-1">
                   <img
-                    src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="https://images.pexels.com/photos/3945683/pexels-photo-3945683.jpeg?auto=compress&cs=tinysrgb&w=400"
                     alt="Ultrasonic device scam"
-                    className="w-full h-64 md:h-72 object-cover grayscale contrast-125"
+                    className="w-full h-40 object-cover grayscale contrast-125"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span
-                      className="text-5xl md:text-7xl font-extrabold text-red-600 uppercase tracking-tight select-none"
-                      style={{ transform: "rotate(-15deg)", textShadow: "0 0 20px rgba(0,0,0,0.5)", border: "4px solid #dc2626", padding: "4px 16px" }}
+                      className="text-3xl font-extrabold text-red-500 uppercase tracking-tight select-none"
+                      style={{ transform: "rotate(-15deg)", border: "3px solid #ef4444", padding: "2px 10px" }}
                     >
                       SCAM
                     </span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 px-4 py-2">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-300">
-                      Case ID: 0043 — Ultrasonic Devices
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 px-3 py-1.5">
+                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                      Case 0043 — Ultrasonic Devices
                     </span>
                   </div>
                 </div>
-                <div className="relative overflow-hidden">
+                <div className="relative overflow-hidden flex-1">
                   <img
-                    src="https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg?auto=compress&cs=tinysrgb&w=800"
+                    src="https://images.pexels.com/photos/4202325/pexels-photo-4202325.jpeg?auto=compress&cs=tinysrgb&w=400"
                     alt="Essential oil repellents scam"
-                    className="w-full h-64 md:h-72 object-cover grayscale contrast-125"
+                    className="w-full h-40 object-cover grayscale contrast-125"
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
                     <span
-                      className="text-5xl md:text-7xl font-extrabold text-red-600 uppercase tracking-tight select-none"
-                      style={{ transform: "rotate(-15deg)", textShadow: "0 0 20px rgba(0,0,0,0.5)", border: "4px solid #dc2626", padding: "4px 16px" }}
+                      className="text-3xl font-extrabold text-red-500 uppercase tracking-tight select-none"
+                      style={{ transform: "rotate(-15deg)", border: "3px solid #ef4444", padding: "2px 10px" }}
                     >
                       SCAM
                     </span>
                   </div>
-                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 px-4 py-2">
-                    <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-neutral-300">
-                      Case ID: 0211 — Essential Oil "Repellents"
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/70 px-3 py-1.5">
+                    <span className="text-[9px] font-bold uppercase tracking-[0.2em] text-neutral-400">
+                      Case 0211 — Essential Oils
                     </span>
                   </div>
                 </div>
@@ -135,7 +137,7 @@ const About = () => {
                 Who We Are
               </p>
               <h2 className="text-4xl sm:text-5xl md:text-6xl font-extrabold uppercase leading-[1] tracking-tight text-foreground">
-                Pest Control Is a<br />Math Problem.
+                Pest<br />Control<br />Is a Math<br />Problem.
               </h2>
             </div>
             <div className="flex flex-col gap-8">

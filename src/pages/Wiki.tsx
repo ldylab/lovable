@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowRight, Settings, Bug, ShieldOff, Package } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 const hardwareEntries = [
   {
@@ -151,6 +151,7 @@ type PestEntry = {
 const HardwareRow = ({ entry }: { entry: WikiEntry }) => (
   <Link
     to={entry.href}
+    onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
     className="group flex items-center justify-between border border-border hover:border-primary hover:bg-primary/5 transition-all duration-200"
   >
     <div className="flex items-center gap-4">
@@ -181,6 +182,7 @@ const HardwareRow = ({ entry }: { entry: WikiEntry }) => (
 const PestRow = ({ entry }: { entry: PestEntry }) => (
   <Link
     to={entry.href}
+    onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
     className="group flex items-center justify-between border border-border hover:border-primary hover:bg-primary/5 transition-all duration-200"
   >
     <div className="flex items-center gap-4">
@@ -225,9 +227,8 @@ const Wiki = () => {
 
         {/* Hardware */}
         <div id="hardware" className="mb-16">
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
-            <Settings size={18} className="text-primary" />
-            <h2 className="text-sm font-black uppercase tracking-[0.2em] text-foreground">Hardware</h2>
+          <div className="mb-6 pb-4 border-b border-border">
+            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Hardware</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {hardwareEntries.map((entry, i) => (
@@ -238,9 +239,8 @@ const Wiki = () => {
 
         {/* Exclusion Materials */}
         <div id="exclusion" className="mb-16">
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
-            <Package size={18} className="text-primary" />
-            <h2 className="text-sm font-black uppercase tracking-[0.2em] text-foreground">Exclusion Materials</h2>
+          <div className="mb-6 pb-4 border-b border-border">
+            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Exclusion Materials</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {exclusionEntries.map((entry, i) => (
@@ -251,10 +251,9 @@ const Wiki = () => {
 
         {/* Scams */}
         <div id="scams" className="mb-16">
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-destructive/30">
-            <ShieldOff size={18} className="text-destructive" />
-            <h2 className="text-sm font-black uppercase tracking-[0.2em] text-foreground">Scams</h2>
-            <span className="text-[10px] font-black uppercase tracking-[0.1em] bg-destructive/10 text-destructive px-2 py-0.5 ml-1">
+          <div className="mb-6 pb-4 border-b border-destructive/30 flex items-center gap-3">
+            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Scams</h2>
+            <span className="text-[10px] font-black uppercase tracking-[0.1em] bg-destructive/10 text-destructive px-2 py-0.5">
               Avoid These
             </span>
           </div>
@@ -263,6 +262,7 @@ const Wiki = () => {
               <Link
                 key={i}
                 to={entry.href}
+                onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
                 className="group flex items-center justify-between border border-destructive/20 hover:border-destructive hover:bg-destructive/5 transition-all duration-200"
               >
                 <div className="flex items-center gap-4">
@@ -292,11 +292,10 @@ const Wiki = () => {
           </div>
         </div>
 
-        {/* Biology / Pests */}
+        {/* Rodents */}
         <div id="biology" className="mb-16">
-          <div className="flex items-center gap-3 mb-6 pb-4 border-b border-border">
-            <Bug size={18} className="text-primary" />
-            <h2 className="text-sm font-black uppercase tracking-[0.2em] text-foreground">Biology</h2>
+          <div className="mb-6 pb-4 border-b border-border">
+            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Rodents</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {pestEntries.map((entry, i) => (

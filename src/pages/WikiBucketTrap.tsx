@@ -3,23 +3,15 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WikiCategoryHub from "@/components/WikiCategoryHub";
-import {
-  Settings,
-  List,
-  TriangleAlert as AlertTriangle,
-  Zap,
-  Target,
-  ChevronRight,
-  Info,
-} from "lucide-react";
+import { ChevronRight, TriangleAlert as AlertTriangle } from "lucide-react";
 
 const tocSections = [
-  { id: "overview", label: "Overview", icon: Info },
-  { id: "mechanism", label: "Mechanism", icon: Settings },
-  { id: "variants", label: "Variants", icon: List },
-  { id: "flaws", label: "Flaws", icon: AlertTriangle },
-  { id: "synergies", label: "Synergies", icon: Zap },
-  { id: "deployment", label: "Deployment", icon: Target },
+  { id: "overview", label: "Overview" },
+  { id: "mechanism", label: "Mechanism" },
+  { id: "variants", label: "Variants" },
+  { id: "flaws", label: "Flaws" },
+  { id: "synergies", label: "Synergies" },
+  { id: "deployment", label: "Deployment" },
 ];
 
 const BucketTrapDiagram = () => (
@@ -305,12 +297,9 @@ const WikiBucketTrap = () => {
 
             {/* Mechanism */}
             <section id="mechanism" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <Settings size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Mechanism
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Mechanism
+              </h3>
               <p className="text-foreground text-base md:text-lg leading-relaxed mb-4">
                 The device consists of a custom lid fitted over a standard 5-gallon bucket. The lid contains
                 a balanced "false floor" or trapdoor. Bait is placed at the far end of this floor or suspended
@@ -328,12 +317,9 @@ const WikiBucketTrap = () => {
 
             {/* Variants */}
             <section id="variants" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <List size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Variants
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Variants
+              </h3>
               <div className="space-y-3">
                 {[
                   {
@@ -362,12 +348,9 @@ const WikiBucketTrap = () => {
 
             {/* Flaws — industrial warning style */}
             <section id="flaws" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <AlertTriangle size={20} className="text-yellow-400 flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Flaws
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Flaws
+              </h3>
               <div className="border-l-[3px] border-red-500 bg-red-50/60 dark:bg-red-950/20 px-5 py-4">
                 <ul className="space-y-3">
                   {[
@@ -389,12 +372,9 @@ const WikiBucketTrap = () => {
 
             {/* Synergies */}
             <section id="synergies" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <Zap size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Synergies
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Synergies
+              </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 {[
                   { label: "Peanut Butter Bait", desc: "Maximizes attraction radius and trigger rate.", Icon: PeanutButterIcon },
@@ -417,12 +397,9 @@ const WikiBucketTrap = () => {
 
             {/* Deployment */}
             <section id="deployment" className="mb-10">
-              <div className="flex items-center gap-3 mb-5">
-                <Target size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Deployment Strategy
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Deployment Strategy
+              </h3>
               <div className="bg-foreground text-background p-6">
                 <div className="flex items-start gap-3 mb-3">
                   <AlertTriangle size={16} className="text-primary flex-shrink-0 mt-0.5" />

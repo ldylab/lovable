@@ -3,15 +3,15 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WikiCategoryHub from "@/components/WikiCategoryHub";
-import { Info, Eye, TriangleAlert as AlertTriangleIcon, Target, ShieldAlert, Lock, ChevronRight } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 const tocSections = [
-  { id: "overview", label: "Overview", icon: Info },
-  { id: "visual-id", label: "Visual ID", icon: Eye },
-  { id: "threat", label: "The Threat", icon: AlertTriangleIcon },
-  { id: "eradication", label: "Eradication Protocol", icon: Target },
-  { id: "hazmat", label: "Hazmat & Cleanup", icon: ShieldAlert },
-  { id: "exclusion", label: "Exclusion", icon: Lock },
+  { id: "overview", label: "Overview" },
+  { id: "visual-id", label: "Visual ID" },
+  { id: "threat", label: "The Threat" },
+  { id: "eradication", label: "Eradication Protocol" },
+  { id: "hazmat", label: "Hazmat & Cleanup" },
+  { id: "exclusion", label: "Exclusion" },
 ];
 
 const WikiDeerMouse = () => {
@@ -149,12 +149,9 @@ const WikiDeerMouse = () => {
 
             {/* Visual ID */}
             <section id="visual-id" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <Eye size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Visual ID: Is This a Deer Mouse?
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Visual ID: Is This a Deer Mouse?
+              </h3>
               <p className="text-foreground text-base md:text-lg leading-relaxed mb-6">
                 Do not confuse it with the standard House Mouse. You can positively identify a deer mouse by three
                 distinct physical features:
@@ -189,12 +186,9 @@ const WikiDeerMouse = () => {
 
             {/* The Threat */}
             <section id="threat" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <AlertTriangleIcon size={20} className="text-destructive flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  The Threat: Hantavirus
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                The Threat: Hantavirus
+              </h3>
               <p className="text-foreground text-base md:text-lg leading-relaxed mb-6">
                 Deer mice are the principal reservoir for the Sin Nombre virus, which causes Hantavirus Pulmonary
                 Syndrome (HPS) — a severe respiratory disease with a fatality rate of about 36% in humans.
@@ -214,12 +208,9 @@ const WikiDeerMouse = () => {
 
             {/* Eradication Protocol */}
             <section id="eradication" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <Target size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Eradication Protocol
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Eradication Protocol
+              </h3>
               <p className="text-foreground text-base md:text-lg leading-relaxed mb-6">
                 Deer mice are opportunistic hoarders and excellent climbers that will nest in wall voids, attics,
                 and even abandoned vehicles.
@@ -255,12 +246,9 @@ const WikiDeerMouse = () => {
 
             {/* Hazmat & Cleanup */}
             <section id="hazmat" className="mb-14">
-              <div className="flex items-center gap-3 mb-5">
-                <ShieldAlert size={20} className="text-destructive flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Hazmat &amp; Cleanup Protocol
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Hazmat &amp; Cleanup Protocol
+              </h3>
               <div className="bg-destructive text-destructive-foreground px-5 py-3 mb-6">
                 <p className="text-xs font-black uppercase tracking-[0.2em]">Critical — Treat as Biohazard Zone</p>
               </div>
@@ -303,12 +291,9 @@ const WikiDeerMouse = () => {
 
             {/* Exclusion */}
             <section id="exclusion" className="mb-10">
-              <div className="flex items-center gap-3 mb-5">
-                <Lock size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
-                  Exclusion (Permanent Prevention)
-                </h3>
-              </div>
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
+                Exclusion (Permanent Prevention)
+              </h3>
               <div className="bg-foreground text-background p-6 mb-6">
                 <p className="font-black text-sm uppercase tracking-tight mb-2">The Only Permanent Solution</p>
                 <p className="text-background/80 text-base leading-relaxed">

@@ -3,15 +3,7 @@ import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WikiCategoryHub from "@/components/WikiCategoryHub";
-import {
-  Info,
-  Eye,
-  AlertTriangle as AlertTriangleIcon,
-  Target,
-  ShieldAlert,
-  Lock,
-  ChevronRight,
-} from "lucide-react";
+import { Info, Eye, TriangleAlert as AlertTriangleIcon, Target, ShieldAlert, Lock, ChevronRight } from "lucide-react";
 
 const tocSections = [
   { id: "overview", label: "Overview", icon: Info },

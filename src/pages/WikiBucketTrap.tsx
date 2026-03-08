@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WikiCategoryHub from "@/components/WikiCategoryHub";
 import {
   Settings,
   List,
@@ -447,6 +448,7 @@ const WikiBucketTrap = () => {
         </div>
       </div>
 
+      <WikiCategoryHub />
       <Footer />
     </div>
   );

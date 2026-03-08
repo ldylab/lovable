@@ -34,15 +34,22 @@ const Navbar = () => {
             {/* Full-width mega menu bar */}
             <div className="mega-menu fixed top-20 left-0 w-screen bg-background border-b border-border shadow-sm z-50">
               <div className="max-w-7xl mx-auto px-6 md:px-12 py-14 grid grid-cols-3 gap-12">
-                {/* Column 1: Trap Categories */}
+                {/* Column 1: Protocol Steps */}
                 <div>
-                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] mb-6">Trap Categories</h3>
-                  <div className="space-y-4">
-                    <a className="block text-base font-bold text-foreground hover:text-primary transition-colors" href="/academy">Snap Traps</a>
-                    <a className="block text-base font-bold text-foreground hover:text-primary transition-colors" href="/academy">Bait Stations</a>
-                    <a className="block text-base font-bold text-foreground hover:text-primary transition-colors" href="/academy">Exclusion Tools</a>
-                    <a className="block text-base font-bold text-foreground hover:text-primary transition-colors" href="/academy">Monitoring Kits</a>
-                    <a className="block text-base font-bold text-destructive hover:text-destructive/80 transition-colors mt-5 pt-4 border-t border-border" href="/academy">Scam Alert</a>
+                  <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] mb-6">The Protocol</h3>
+                  <div className="space-y-5">
+                    {[
+                      { step: "Step 01: Find", desc: "Inspect & identify activity." },
+                      { step: "Step 02: Bait", desc: "Pre-bait & build trust." },
+                      { step: "Step 03: Kill", desc: "Trap & eliminate." },
+                      { step: "Step 04: Seal", desc: "Seal & fortify forever." },
+                    ].map((s) => (
+                      <a key={s.step} className="group/item block" href="/academy">
+                        <h4 className="text-sm font-black text-foreground uppercase tracking-tight group-hover/item:text-primary transition-colors">{s.step}</h4>
+                        <p className="text-sm text-muted-foreground mt-0.5">{s.desc}</p>
+                      </a>
+                    ))}
+                    <a className="block text-sm font-black text-destructive hover:text-destructive/80 uppercase tracking-tight transition-colors pt-4 border-t border-border" href="/academy">Scam Alert</a>
                   </div>
                 </div>
 

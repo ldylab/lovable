@@ -5,10 +5,6 @@ import Footer from "@/components/Footer";
 
 const categories = [
   { label: "All Articles", slug: "all" },
-  { label: "Snap Traps", slug: "snap-traps" },
-  { label: "Bait Stations", slug: "bait-stations" },
-  { label: "Exclusion Tools", slug: "exclusion-tools" },
-  { label: "Monitoring Kits", slug: "monitoring-kits" },
   { label: "Scam Alert", slug: "scam-alert", isAlert: true },
 ];
 
@@ -233,10 +229,10 @@ const Academy = () => {
             {/* Sidebar */}
             <aside className="w-full lg:w-[240px] flex-shrink-0 space-y-10">
 
-              {/* Trap Categories */}
+              {/* Quick Filter */}
               <div>
                 <h3 className="text-xs font-bold text-muted-foreground uppercase tracking-[0.2em] mb-5">
-                  Trap Categories
+                  Filter
                 </h3>
                 <div className="space-y-2">
                   {categories.map((cat) => (

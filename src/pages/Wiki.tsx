@@ -98,6 +98,12 @@ const scamEntries = [
 
 const pestEntries = [
   {
+    title: "The Deer Mouse",
+    target: "Species Profile — EXTREME BIOHAZARD",
+    href: "/wiki/deer-mouse",
+    img: "https://images.pexels.com/photos/10005722/pexels-photo-10005722.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+  },
+  {
     title: "House Mouse",
     target: "Species Profile",
     href: "/wiki/bucket-trap",

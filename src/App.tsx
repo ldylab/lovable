@@ -9,6 +9,7 @@ import Article1 from "./pages/Article1";
 import About from "./pages/About";
 import Wiki from "./pages/Wiki";
 import WikiBucketTrap from "./pages/WikiBucketTrap";
+import WikiDeerMouse from "./pages/WikiDeerMouse";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/about" element={<About />} />
           <Route path="/wiki" element={<Wiki />} />
           <Route path="/wiki/bucket-trap" element={<WikiBucketTrap />} />
+          <Route path="/wiki/deer-mouse" element={<WikiDeerMouse />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

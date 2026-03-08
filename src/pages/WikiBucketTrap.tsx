@@ -241,26 +241,24 @@ const WikiBucketTrap = () => {
         <div className="flex gap-0 relative">
 
           {/* Left TOC Sidebar */}
-          <aside className="hidden lg:block w-[220px] flex-shrink-0">
-            <div className="sticky top-24 py-10 pr-6">
-              <p className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.25em] mb-5">
+          <aside className="hidden lg:block w-[280px] flex-shrink-0">
+            <div className="sticky top-24 py-10 pr-8">
+              <p className="text-sm font-bold text-muted-foreground uppercase tracking-[0.2em] mb-6">
                 Table of Contents
               </p>
-              <nav className="space-y-0.5">
+              <nav className="space-y-1">
                 {tocSections.map((s) => {
-                  const Icon = s.icon;
                   const isActive = activeSection === s.id;
                   return (
                     <button
                       key={s.id}
                       onClick={() => scrollTo(s.id)}
-                      className={`flex items-center gap-3 w-full text-left text-sm leading-snug py-2.5 px-3 transition-colors duration-200 border-l-2 ${
+                      className={`block w-full text-left text-base leading-snug py-2 transition-colors duration-200 border-l-2 pl-4 ${
                         isActive
-                          ? "border-primary text-foreground font-bold bg-primary/5"
-                          : "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
+                          ? "border-primary text-foreground font-bold"
+                          : "border-transparent text-muted-foreground hover:text-foreground"
                       }`}
                     >
-                      <Icon size={13} className={isActive ? "text-primary" : "text-muted-foreground"} />
                       {s.label}
                     </button>
                   );
@@ -270,9 +268,9 @@ const WikiBucketTrap = () => {
           </aside>
 
           {/* Center Article Content */}
-          <main className="flex-1 min-w-0 border-x border-border px-6 md:px-14 py-12">
+          <main className="flex-1 min-w-0 border-x border-border px-8 md:px-14 py-12">
             {/* Breadcrumb */}
-            <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.25em] text-muted-foreground mb-8">
+            <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-muted-foreground mb-8">
               <Link to="/wiki" className="hover:text-foreground transition-colors">Wiki</Link>
               <ChevronRight size={10} />
               <Link to="/wiki#hardware" className="hover:text-foreground transition-colors">Hardware</Link>
@@ -295,7 +293,7 @@ const WikiBucketTrap = () => {
                 A Highly Effective Multi-Catch Trap for Mice.
               </p>
 
-              <p className="mt-6 text-foreground text-base md:text-lg leading-relaxed max-w-2xl">
+              <p className="mt-8 text-muted-foreground text-lg leading-relaxed max-w-3xl">
                 The Bucket Trap, featuring a false floor lid, is a high-capacity, multi-catch trap designed
                 primarily for mice. It leverages a simple yet highly effective mechanism to drop rodents into
                 a bucket, ensuring continuous operation without manual resetting.
@@ -308,11 +306,11 @@ const WikiBucketTrap = () => {
             <section id="mechanism" className="mb-14">
               <div className="flex items-center gap-3 mb-5">
                 <Settings size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-foreground">
+                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
                   Mechanism
                 </h3>
               </div>
-              <p className="text-foreground text-base leading-relaxed mb-4">
+              <p className="text-foreground text-base md:text-lg leading-relaxed mb-4">
                 The device consists of a custom lid fitted over a standard 5-gallon bucket. The lid contains
                 a balanced "false floor" or trapdoor. Bait is placed at the far end of this floor or suspended
                 above it. When a mouse walks out to retrieve the bait, its weight tips the floor downward,
@@ -321,7 +319,7 @@ const WikiBucketTrap = () => {
 
               <BucketTrapDiagram />
 
-              <p className="text-foreground text-base leading-relaxed">
+              <p className="text-foreground text-base md:text-lg leading-relaxed">
                 The floor is counterweighted (often magnetically or with a simple pivot) to immediately reset
                 itself for the next target.
               </p>
@@ -331,7 +329,7 @@ const WikiBucketTrap = () => {
             <section id="variants" className="mb-14">
               <div className="flex items-center gap-3 mb-5">
                 <List size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-foreground">
+                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
                   Variants
                 </h3>
               </div>
@@ -365,7 +363,7 @@ const WikiBucketTrap = () => {
             <section id="flaws" className="mb-14">
               <div className="flex items-center gap-3 mb-5">
                 <AlertTriangle size={20} className="text-yellow-400 flex-shrink-0" />
-                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-foreground">
+                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
                   Flaws
                 </h3>
               </div>
@@ -392,7 +390,7 @@ const WikiBucketTrap = () => {
             <section id="synergies" className="mb-14">
               <div className="flex items-center gap-3 mb-5">
                 <Zap size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-foreground">
+                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
                   Synergies
                 </h3>
               </div>
@@ -420,7 +418,7 @@ const WikiBucketTrap = () => {
             <section id="deployment" className="mb-10">
               <div className="flex items-center gap-3 mb-5">
                 <Target size={20} className="text-primary flex-shrink-0" />
-                <h3 className="text-xl md:text-2xl font-black uppercase tracking-tight text-foreground">
+                <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">
                   Deployment Strategy
                 </h3>
               </div>
@@ -429,7 +427,7 @@ const WikiBucketTrap = () => {
                   <AlertTriangle size={16} className="text-primary flex-shrink-0 mt-0.5" />
                   <p className="font-black text-sm uppercase tracking-tight">Optimal Placement</p>
                 </div>
-                <p className="text-background/80 text-sm leading-relaxed">
+                <p className="text-background/80 text-base leading-relaxed">
                   Deploy along walls where high mouse traffic is suspected. The ramp must be flush against the
                   wall to guide the target upwards. Use peanut butter spread on the underside of the lid cover
                   (above the trap door) rather than on the door itself to force the target further out before
@@ -441,7 +439,7 @@ const WikiBucketTrap = () => {
           </main>
 
           {/* Right Sidebar — Stat Card (xl screens only) */}
-          <aside className="hidden xl:block w-[280px] flex-shrink-0">
+          <aside className="hidden xl:block w-[300px] flex-shrink-0">
             <div className="sticky top-24 py-12 pl-8">
               {statCard}
             </div>

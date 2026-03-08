@@ -1,10 +1,10 @@
-import { Users, Stethoscope, PiggyBank, MessageCircle, ArrowRight } from "lucide-react";
+import { Users, MessageCircle } from "lucide-react";
 import { Instagram, Twitter, Youtube, Facebook } from "lucide-react";
 
 const stats = [
-  { icon: Stethoscope, value: "Free", label: "Expert Diagnosis" },
-  { icon: Users, value: "10,000+", label: "Homeowners Helped" },
-  { icon: PiggyBank, value: "80%", label: "Average Savings" },
+  { value: "Free", label: "Expert Diagnosis" },
+  { value: "10,000+", label: "Homeowners Helped" },
+  { value: "80%", label: "Average Savings" },
 ];
 
 const socials = [
@@ -61,16 +61,10 @@ const SocialSection = () => {
             {stats.map((stat) => (
               <div
                 key={stat.label}
-                className="flex items-center gap-6 p-6 bg-background border border-border hover:border-primary/30 transition-colors group"
+                className="flex items-center gap-8 p-6 border border-border hover:bg-primary transition-colors duration-200 cursor-default"
               >
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
-                  <stat.icon size={22} className="text-primary" />
-                </div>
-                <div className="flex-1">
-                  <p className="text-2xl font-extrabold text-foreground">{stat.value}</p>
-                  <p className="text-sm text-swiss-light-text">{stat.label}</p>
-                </div>
-                <ArrowRight size={18} className="text-swiss-light-text opacity-0 group-hover:opacity-100 transition-opacity" />
+                <p className="text-3xl font-black text-foreground">{stat.value}</p>
+                <p className="text-base font-bold text-foreground uppercase tracking-wide">{stat.label}</p>
               </div>
             ))}
           </div>

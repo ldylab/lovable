@@ -247,7 +247,7 @@ const Article1 = () => {
 
               <WikiEntryCard
                 href="/wiki/bucket-trap"
-                img="https://images.pexels.com/photos/3780104/pexels-photo-3780104.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                img="https://images.pexels.com/photos/3780104/pexels-photo-3780104.jpeg?auto=compress&cs=tinysrgb&w=200"
                 tier="F-TIER"
                 title="Ultrasonic Repellers"
                 subtitle="All — Proven Ineffective"
@@ -277,7 +277,7 @@ const Article1 = () => {
 
               <WikiEntryCard
                 href="/wiki/bucket-trap"
-                img="https://images.pexels.com/photos/5961893/pexels-photo-5961893.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                img="https://images.pexels.com/photos/5961893/pexels-photo-5961893.jpeg?auto=compress&cs=tinysrgb&w=200"
                 tier="A-TIER"
                 title="Snap Trap (Expanded Trigger)"
                 subtitle="Mice"
@@ -344,7 +344,6 @@ const Article1 = () => {
                 <p className="mt-2">This is arguably the best trap for garages, barns, or basements where infestation levels are high. It is also the best method for catch and release.</p>
                 <WikiEntryCard
                   href="/wiki/bucket-trap"
-                  img="https://images.pexels.com/photos/4308049/pexels-photo-4308049.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
                   tier="S-TIER"
                   title="The Bucket Trap (False Floor Lid)"
                   subtitle="Mice"
@@ -369,7 +368,7 @@ const Article1 = () => {
 
               <WikiEntryCard
                 href="/wiki/bucket-trap"
-                img="https://images.pexels.com/photos/4226896/pexels-photo-4226896.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                img="https://images.pexels.com/photos/4226896/pexels-photo-4226896.jpeg?auto=compress&cs=tinysrgb&w=200"
                 tier="D-TIER"
                 title="Glue Traps"
                 subtitle="All — Avoid"
@@ -413,7 +412,7 @@ const Article1 = () => {
 
               <WikiEntryCard
                 href="/wiki/bucket-trap"
-                img="https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                img="https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=200"
                 tier="A-TIER"
                 title="Steel Wool Exclusion"
                 subtitle="All Rodents"

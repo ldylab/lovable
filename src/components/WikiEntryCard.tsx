@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
 
 type WikiEntryCardProps = {
   href: string;
@@ -10,59 +11,50 @@ type WikiEntryCardProps = {
   target?: string;
 };
 
-const tierBadge = (tier: string) => {
-  if (tier === "S-TIER") return "bg-yellow-400 text-black";
-  if (tier === "A-TIER") return "bg-black text-white";
-  if (tier === "B-TIER") return "bg-neutral-500 text-white";
-  if (tier === "C-TIER") return "bg-neutral-300 text-neutral-700";
-  if (tier === "D-TIER") return "bg-orange-500 text-white";
-  if (tier === "F-TIER") return "bg-red-500 text-white";
-  return "bg-neutral-200 text-neutral-600";
+const tierColor = (tier: string) => {
+  if (tier === "S-TIER") return "bg-primary text-primary-foreground";
+  if (tier === "A-TIER") return "bg-foreground text-background";
+  if (tier === "B-TIER") return "bg-muted text-muted-foreground";
+  if (tier === "C-TIER") return "bg-muted text-muted-foreground";
+  if (tier === "D-TIER") return "bg-destructive/20 text-destructive";
+  if (tier === "F-TIER") return "bg-destructive text-destructive-foreground";
+  return "bg-muted text-muted-foreground";
 };
 
-const WikiEntryCard = ({ href, img, tier, title, subtitle, class: cls, target }: WikiEntryCardProps) => {
-  const badge = tier ? tierBadge(tier) : "bg-neutral-200 text-neutral-600";
-  const metaClass = cls || "HARDWARE";
-  const metaTarget = target || subtitle.toUpperCase();
-
-  return (
-    <Link
-      to={href}
-      className="group not-prose flex items-stretch border border-[#E5E5E5] bg-white transition-all duration-150 hover:border-neutral-400 hover:shadow-sm"
-      style={{ textDecoration: "none" }}
-    >
-      <div className="w-[72px] h-[72px] flex-shrink-0 overflow-hidden bg-[#F0F0F0]">
+const WikiEntryCard = ({ href, img, tier, title, subtitle }: WikiEntryCardProps) => (
+  <Link
+    to={href}
+    className="not-prose group flex items-center justify-between border border-border hover:border-primary hover:bg-primary/5 transition-all duration-200"
+  >
+    <div className="flex items-center gap-4">
+      <div className="w-[72px] h-[72px] flex-shrink-0 overflow-hidden bg-muted">
         {img ? (
           <img
             src={img}
             alt={title}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
         ) : (
-          <div className="w-full h-full bg-neutral-200" />
+          <div className="w-full h-full bg-muted" />
         )}
       </div>
-
-      <div className="flex-1 min-w-0 flex flex-col justify-center px-4 py-2.5 gap-0.5">
-        <p className="text-[13px] font-bold text-foreground leading-snug">
+      <div>
+        {tier && (
+          <span className={`text-[10px] font-black uppercase tracking-[0.15em] px-2 py-0.5 inline-block mb-1 ${tierColor(tier)}`}>
+            {tier}
+          </span>
+        )}
+        <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
           {title}
         </p>
-        <div className="flex items-center gap-2">
-          <p className="text-[11px] text-muted-foreground">
-            {subtitle}
-          </p>
-          {tier && (
-            <span className={`text-[8px] font-black uppercase tracking-[0.15em] px-1.5 py-0.5 leading-none ${badge}`}>
-              {tier}
-            </span>
-          )}
-        </div>
-        <p className="text-[9px] text-muted-foreground uppercase tracking-[0.14em] font-mono mt-0.5">
-          CLASS: {metaClass} · TARGET: {metaTarget}
-        </p>
+        <p className="text-xs text-muted-foreground mt-0.5">{subtitle}</p>
       </div>
-    </Link>
-  );
-};
+    </div>
+    <ArrowRight
+      size={14}
+      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all mr-5 flex-shrink-0"
+    />
+  </Link>
+);
 
 export default WikiEntryCard;

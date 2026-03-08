@@ -56,8 +56,16 @@ const WikiBucketTrap = () => {
       </div>
 
       <div className="divide-y divide-border">
+        <div className="px-4 py-3">
+          <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground block mb-1">
+            Classification
+          </span>
+          <div className="flex gap-1.5">
+            <span className="text-[10px] font-bold uppercase tracking-[0.05em] bg-muted text-muted-foreground px-2 py-0.5">Trap</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.05em] bg-muted text-muted-foreground px-2 py-0.5">Mechanical</span>
+          </div>
+        </div>
         {[
-          { label: "Classification", value: "Trap, Mechanical", valueClass: "" },
           { label: "Primary Target", value: "Mice", valueClass: "font-bold" },
           { label: "Efficacy Rating", value: "S-TIER", valueClass: "bg-primary text-primary-foreground px-2 py-0.5 text-xs font-black" },
           { label: "Pet Safe", value: "⚠ Conditional", valueClass: "text-[hsl(var(--safety-yellow))] font-semibold" },

@@ -4,24 +4,13 @@ import { ArrowRight } from "lucide-react";
 type WikiEntryCardProps = {
   href: string;
   img?: string;
-  tier?: string;
   title: string;
   subtitle: string;
   class?: string;
   target?: string;
 };
 
-const tierColor = (tier: string) => {
-  if (tier === "S-TIER") return "bg-primary text-primary-foreground";
-  if (tier === "A-TIER") return "bg-foreground text-background";
-  if (tier === "B-TIER") return "bg-muted text-muted-foreground";
-  if (tier === "C-TIER") return "bg-muted text-muted-foreground";
-  if (tier === "D-TIER") return "bg-destructive/20 text-destructive";
-  if (tier === "F-TIER") return "bg-destructive text-destructive-foreground";
-  return "bg-muted text-muted-foreground";
-};
-
-const WikiEntryCard = ({ href, img, tier, title, subtitle }: WikiEntryCardProps) => (
+const WikiEntryCard = ({ href, img, title, subtitle, class: className, target }: WikiEntryCardProps) => (
   <Link
     to={href}
     onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
@@ -41,10 +30,19 @@ const WikiEntryCard = ({ href, img, tier, title, subtitle }: WikiEntryCardProps)
         )}
       </div>
       <div className="py-1">
-        {tier && (
-          <span className={`text-[9px] font-black uppercase tracking-[0.12em] px-1.5 py-px inline-block mb-1 ${tierColor(tier)}`}>
-            {tier}
-          </span>
+        {(className || target) && (
+          <div className="flex items-center gap-1 mb-1">
+            {className && (
+              <span className="text-[9px] font-black uppercase tracking-[0.12em] px-1.5 py-px inline-block bg-foreground text-background">
+                {className}
+              </span>
+            )}
+            {target && (
+              <span className="text-[9px] font-black uppercase tracking-[0.12em] px-1.5 py-px inline-block bg-muted text-muted-foreground">
+                {target}
+              </span>
+            )}
+          </div>
         )}
         <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors leading-snug">
           {title}

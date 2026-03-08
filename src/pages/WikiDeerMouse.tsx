@@ -156,7 +156,7 @@ const WikiDeerMouse = () => {
                 Do not confuse it with the standard House Mouse. You can positively identify a deer mouse by three
                 distinct physical features:
               </p>
-              <div className="space-y-3">
+              <ol className="list-decimal list-outside ml-5 space-y-3 text-base">
                 {[
                   {
                     label: "The Two-Tone Coat",
@@ -171,17 +171,11 @@ const WikiDeerMouse = () => {
                     desc: "It possesses large, bulging black eyes and large, thin ears.",
                   },
                 ].map((item, i) => (
-                  <div key={i} className="border border-border p-5 flex items-start gap-4">
-                    <div className="w-7 h-7 flex-shrink-0 flex items-center justify-center bg-primary text-primary-foreground font-black text-sm mt-0.5">
-                      {i + 1}
-                    </div>
-                    <div>
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wide">{item.label}</p>
-                      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
+                  <li key={i} className="text-foreground leading-relaxed pl-1">
+                    <span className="font-bold">{item.label}</span> — {item.desc}
+                  </li>
                 ))}
-              </div>
+              </ol>
             </section>
 
             {/* The Threat */}
@@ -215,33 +209,17 @@ const WikiDeerMouse = () => {
                 Deer mice are opportunistic hoarders and excellent climbers that will nest in wall voids, attics,
                 and even abandoned vehicles.
               </p>
-              <div className="space-y-3">
-                {[
-                  {
-                    label: "Hardware",
-                    desc: "Use standard mechanical snap traps. Place them no more than 10 feet apart along walls.",
-                  },
-                  {
-                    label: "Bait Synergy",
-                    desc: "Peanut butter, or peanut butter mixed with rolled oats, is highly effective. Avoid loose pellet baits, as deer mice have a habit of hoarding food without eating it.",
-                  },
-                  {
-                    label: "What to Avoid",
-                    desc: "NEVER use live-catch traps or glue boards. Deer mice urinate and defecate when stressed in these traps, drastically increasing your risk of Hantavirus exposure.",
-                    warning: true,
-                  },
-                ].map((item, i) => (
-                  <div
-                    key={i}
-                    className={`border p-5 ${item.warning ? "border-destructive/40 bg-destructive/5" : "border-border"}`}
-                  >
-                    <p className={`font-bold text-sm uppercase tracking-wide mb-1 ${item.warning ? "text-destructive" : "text-foreground"}`}>
-                      {item.label}
-                    </p>
-                    <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                  </div>
-                ))}
-              </div>
+              <ul className="list-disc list-outside ml-5 space-y-3 text-base">
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Hardware</span> — Use standard mechanical snap traps. Place them no more than 10 feet apart along walls.
+                </li>
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Bait Synergy</span> — Peanut butter, or peanut butter mixed with rolled oats, is highly effective. Avoid loose pellet baits, as deer mice have a habit of hoarding food without eating it.
+                </li>
+                <li className="text-destructive leading-relaxed pl-1">
+                  <span className="font-bold">What to Avoid</span> — NEVER use live-catch traps or glue boards. Deer mice urinate and defecate when stressed in these traps, drastically increasing your risk of Hantavirus exposure.
+                </li>
+              </ul>
             </section>
 
             {/* Hazmat & Cleanup */}
@@ -255,38 +233,17 @@ const WikiDeerMouse = () => {
               <p className="text-foreground text-base md:text-lg leading-relaxed mb-6">
                 If you catch a deer mouse or find its droppings, treat the area as a biohazard zone.
               </p>
-              <div className="space-y-3">
-                {[
-                  {
-                    step: "01",
-                    label: "No Vacuuming",
-                    desc: "Never sweep or vacuum droppings or nests; this shoots the deadly virus directly into the air you breathe.",
-                    warning: true,
-                  },
-                  {
-                    step: "02",
-                    label: "The Bleach Soak",
-                    desc: "Mix a 10% bleach solution (1.5 cups of bleach to 1 gallon of water). Thoroughly spray the dead mouse, the trap, and the droppings until completely wet. Let it soak for exactly 10 minutes.",
-                  },
-                  {
-                    step: "03",
-                    label: "Disposal",
-                    desc: "Wear nonfabric gloves (rubber, latex, or nitrile). Wipe up the neutralized carcass and droppings with a damp paper towel and dispose of them outside. Wash your hands immediately.",
-                  },
-                ].map((item, i) => (
-                  <div key={i} className={`border p-5 flex items-start gap-4 ${item.warning ? "border-destructive/40 bg-destructive/5" : "border-border"}`}>
-                    <div className={`flex-shrink-0 font-black font-mono text-sm mt-0.5 ${item.warning ? "text-destructive" : "text-muted-foreground"}`}>
-                      {item.step}
-                    </div>
-                    <div>
-                      <p className={`font-bold text-sm uppercase tracking-wide mb-1 ${item.warning ? "text-destructive" : "text-foreground"}`}>
-                        {item.label}
-                      </p>
-                      <p className="text-muted-foreground text-sm leading-relaxed">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <ol className="list-decimal list-outside ml-5 space-y-3 text-base">
+                <li className="text-destructive leading-relaxed pl-1">
+                  <span className="font-bold">No Vacuuming</span> — Never sweep or vacuum droppings or nests; this shoots the deadly virus directly into the air you breathe.
+                </li>
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">The Bleach Soak</span> — Mix a 10% bleach solution (1.5 cups of bleach to 1 gallon of water). Thoroughly spray the dead mouse, the trap, and the droppings until completely wet. Let it soak for exactly 10 minutes.
+                </li>
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Disposal</span> — Wear nonfabric gloves (rubber, latex, or nitrile). Wipe up the neutralized carcass and droppings with a damp paper towel and dispose of them outside. Wash your hands immediately.
+                </li>
+              </ol>
             </section>
 
             {/* Exclusion */}
@@ -302,22 +259,13 @@ const WikiDeerMouse = () => {
                   mice will chew right through them.
                 </p>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  { label: "Steel Wool", verdict: "Approved", ok: true },
-                  { label: "Metal Screening", verdict: "Approved", ok: true },
-                  { label: "Concrete / Mortar", verdict: "Approved", ok: true },
-                  { label: "Plastic / Rubber", verdict: "Ineffective — Chewable", ok: false },
-                  { label: "Expanding Foam (standard)", verdict: "Ineffective — Chewable", ok: false },
-                ].map((item, i) => (
-                  <div key={i} className={`border p-4 flex items-center justify-between ${item.ok ? "border-border" : "border-destructive/30 bg-destructive/5"}`}>
-                    <span className="text-sm font-bold text-foreground">{item.label}</span>
-                    <span className={`text-[10px] font-black uppercase tracking-[0.1em] px-2 py-0.5 ${item.ok ? "bg-foreground text-background" : "bg-destructive text-destructive-foreground"}`}>
-                      {item.verdict}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <ul className="list-disc list-outside ml-5 space-y-2 text-base">
+                <li className="text-foreground leading-relaxed pl-1"><span className="font-bold">Steel Wool</span> — Approved</li>
+                <li className="text-foreground leading-relaxed pl-1"><span className="font-bold">Metal Screening</span> — Approved</li>
+                <li className="text-foreground leading-relaxed pl-1"><span className="font-bold">Concrete / Mortar</span> — Approved</li>
+                <li className="text-destructive leading-relaxed pl-1"><span className="font-bold">Plastic / Rubber</span> — Ineffective, chewable</li>
+                <li className="text-destructive leading-relaxed pl-1"><span className="font-bold">Expanding Foam (standard)</span> — Ineffective, chewable</li>
+              </ul>
             </section>
 
             {/* References */}

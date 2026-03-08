@@ -83,59 +83,6 @@ const BucketTrapDiagram = () => (
   </div>
 );
 
-const RollingLogIcon = () => (
-  <svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <ellipse cx="14" cy="14" rx="6" ry="12" />
-    <ellipse cx="14" cy="14" rx="6" ry="4" />
-    <line x1="14" y1="2" x2="14" y2="26" strokeDasharray="2 2" opacity="0.4" />
-  </svg>
-);
-
-const PlankIcon = () => (
-  <svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <line x1="4" y1="10" x2="24" y2="18" />
-    <circle cx="14" cy="14" r="2.5" fill="currentColor" opacity="0.5" />
-    <line x1="14" y1="14" x2="14" y2="22" />
-    <rect x="10" y="22" width="8" height="3" rx="1" />
-  </svg>
-);
-
-const PeanutButterIcon = () => (
-  <svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="6" y="8" width="16" height="14" rx="3" />
-    <path d="M10 12 Q14 10 18 12" />
-    <path d="M10 16 Q14 14 18 16" />
-    <line x1="14" y1="4" x2="14" y2="8" />
-    <line x1="11" y1="5" x2="14" y2="8" />
-    <line x1="17" y1="5" x2="14" y2="8" />
-  </svg>
-);
-
-const RampIcon = () => (
-  <svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <polygon points="4,24 24,24 24,8" />
-    <line x1="4" y1="24" x2="24" y2="8" />
-    <line x1="4" y1="24" x2="4" y2="26" />
-    <line x1="24" y1="24" x2="24" y2="26" />
-  </svg>
-);
-
-const MultiUnitIcon = () => (
-  <svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <rect x="3" y="10" width="10" height="13" rx="2" />
-    <rect x="15" y="13" width="10" height="10" rx="2" />
-    <line x1="8" y1="7" x2="8" y2="10" />
-    <line x1="20" y1="10" x2="20" y2="13" />
-  </svg>
-);
-
-const ScentIcon = () => (
-  <svg viewBox="0 0 28 28" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M10 22 Q8 16 12 12 Q16 8 14 4" strokeDasharray="2 2" />
-    <path d="M16 22 Q14 17 17 13 Q20 9 18 5" strokeDasharray="2 2" />
-    <line x1="6" y1="24" x2="22" y2="24" />
-  </svg>
-);
 
 const WikiBucketTrap = () => {
   const [activeSection, setActiveSection] = useState("overview");
@@ -320,30 +267,14 @@ const WikiBucketTrap = () => {
               <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
                 Variants
               </h3>
-              <div className="space-y-3">
-                {[
-                  {
-                    title: "Rolling Log",
-                    desc: "Uses a free-spinning cylinder coated in bait spanning across the top of the bucket. Mice attempt to walk on the cylinder, which spins and drops them.",
-                    Icon: RollingLogIcon,
-                  },
-                  {
-                    title: "Plank Walk",
-                    desc: "A simple see-saw plank extending over the edge of the bucket. Less reliable reset mechanism than the false floor lid.",
-                    Icon: PlankIcon,
-                  },
-                ].map((v, i) => (
-                  <div key={i} className="border border-border p-5 flex items-start gap-4">
-                    <div className="w-10 h-10 border border-border flex items-center justify-center flex-shrink-0 text-primary mt-0.5">
-                      <v.Icon />
-                    </div>
-                    <div>
-                      <p className="font-bold text-foreground text-sm uppercase tracking-wide">{v.title}</p>
-                      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{v.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <ul className="list-disc list-outside ml-5 space-y-3 text-base">
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Rolling Log</span> — Uses a free-spinning cylinder coated in bait spanning across the top of the bucket. Mice attempt to walk on the cylinder, which spins and drops them.
+                </li>
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Plank Walk</span> — A simple see-saw plank extending over the edge of the bucket. Less reliable reset mechanism than the false floor lid.
+                </li>
+              </ul>
             </section>
 
             {/* Flaws — industrial warning style */}
@@ -375,24 +306,20 @@ const WikiBucketTrap = () => {
               <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
                 Synergies
               </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {[
-                  { label: "Peanut Butter Bait", desc: "Maximizes attraction radius and trigger rate.", Icon: PeanutButterIcon },
-                  { label: "Ramp Access", desc: "A wooden board leaned against the bucket guides mice to the lid.", Icon: RampIcon },
-                  { label: "Multiple Units", desc: "Deploying 2–3 buckets across infestation zones increases throughput.", Icon: MultiUnitIcon },
-                  { label: "Scent Concealment", desc: "Gloves during setup reduce human scent deterrence.", Icon: ScentIcon },
-                ].map((s, i) => (
-                  <div key={i} className="bg-muted border border-border p-4 flex items-start gap-3">
-                    <div className="w-9 h-9 flex-shrink-0 flex items-center justify-center text-primary border border-border">
-                      <s.Icon />
-                    </div>
-                    <div>
-                      <p className="font-bold text-foreground text-sm">{s.label}</p>
-                      <p className="text-muted-foreground text-sm mt-1 leading-relaxed">{s.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
+              <ul className="list-disc list-outside ml-5 space-y-3 text-base">
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Peanut Butter Bait</span> — Maximizes attraction radius and trigger rate.
+                </li>
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Ramp Access</span> — A wooden board leaned against the bucket guides mice to the lid.
+                </li>
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Multiple Units</span> — Deploying 2–3 buckets across infestation zones increases throughput.
+                </li>
+                <li className="text-foreground leading-relaxed pl-1">
+                  <span className="font-bold">Scent Concealment</span> — Gloves during setup reduce human scent deterrence.
+                </li>
+              </ul>
             </section>
 
             {/* Deployment */}

@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import WikiEntryCard from "@/components/WikiEntryCard";
 import { ThumbsUp, MessageCircle, Share2, Bookmark, Pin, Ban, CheckCircle, AlertTriangle, Target, Shield, Crosshair, Bug, MoreHorizontal, Smile } from "lucide-react";
 
 const tocSections = [
@@ -244,6 +245,14 @@ const Article1 = () => {
               </div>
               <p><strong>Verdict:</strong> Do not try to annoy them out. You must catch them.</p>
 
+              <WikiEntryCard
+                href="/wiki/bucket-trap"
+                img="https://images.pexels.com/photos/3780104/pexels-photo-3780104.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                tier="F-TIER"
+                title="Ultrasonic Repellers"
+                subtitle="All — Proven Ineffective"
+              />
+
               <h2 id="scenario-a" className="text-2xl md:text-3xl font-black uppercase tracking-tight pt-10">Scenario A: The "Minefield" Strategy</h2>
               <p>Mice are curious explorers. They don't have good eyesight, so they travel along walls using their whiskers (vibrissae) to guide them.</p>
 
@@ -265,6 +274,14 @@ const Article1 = () => {
                   <p className="text-sm text-muted-foreground leading-relaxed">Massive deployment. Use 10+ traps even for a single mouse. Overwhelm the population.</p>
                 </div>
               </div>
+
+              <WikiEntryCard
+                href="/wiki/bucket-trap"
+                img="https://images.pexels.com/photos/5961893/pexels-photo-5961893.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                tier="A-TIER"
+                title="Snap Trap (Expanded Trigger)"
+                subtitle="Mice"
+              />
 
               {/* Golden Rule Callout */}
               <div className="bg-primary/10 border-l-4 border-primary px-6 py-5 my-8">
@@ -325,6 +342,13 @@ const Article1 = () => {
                 <h3 className="text-xl font-bold uppercase tracking-tight">The "False Floor" Upgrade</h3>
                 <p className="mt-2">Basic rollers can fail. Smart mice might balance on them. For better results, use a false floor trap — a floating layer (like a plastic bag) on top of water or oil that looks like solid ground. When the mouse steps on it, the floor collapses.</p>
                 <p className="mt-2">This is arguably the best trap for garages, barns, or basements where infestation levels are high. It is also the best method for catch and release.</p>
+                <WikiEntryCard
+                  href="/wiki/bucket-trap"
+                  img="https://images.pexels.com/photos/4308049/pexels-photo-4308049.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                  tier="S-TIER"
+                  title="The Bucket Trap (False Floor Lid)"
+                  subtitle="Mice"
+                />
               </div>
 
               <h2 id="step-4" className="text-2xl md:text-3xl font-black uppercase tracking-tight pt-10">Step 4: What to Avoid (Glue Boards)</h2>
@@ -342,6 +366,14 @@ const Article1 = () => {
                 ))}
               </div>
               <p>For ethical and effective pest management, stick to snap mechanisms or bucket systems.</p>
+
+              <WikiEntryCard
+                href="/wiki/bucket-trap"
+                img="https://images.pexels.com/photos/4226896/pexels-photo-4226896.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                tier="D-TIER"
+                title="Glue Traps"
+                subtitle="All — Avoid"
+              />
 
               <h2 id="troubleshooting" className="text-2xl md:text-3xl font-black uppercase tracking-tight pt-10">Troubleshooting: Why Tools Fail</h2>
               <p>Even with the right tool, things go wrong. Here are common reasons why traps don't catch anything.</p>
@@ -378,6 +410,14 @@ const Article1 = () => {
                 ))}
               </div>
               <p>Mice fit through a hole the size of a dime. Rats fit through a hole the size of a quarter. Stuff holes with Steel Wool. Rodents cannot chew it. Seal the wool in place with caulk or foam.</p>
+
+              <WikiEntryCard
+                href="/wiki/bucket-trap"
+                img="https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop"
+                tier="A-TIER"
+                title="Steel Wool Exclusion"
+                subtitle="All Rodents"
+              />
 
               <div className="bg-primary/10 border-l-4 border-primary p-4 my-6">
                 <p className="font-bold text-foreground">Conclusion</p>

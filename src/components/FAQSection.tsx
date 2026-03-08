@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Plus, Minus } from "lucide-react";
 
 const faqs = [
   {
@@ -24,28 +23,41 @@ const FAQSection = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24">
           <div className="lg:col-span-5">
-            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight mb-6">Rodent Control FAQs</h2>
-            <p className="text-swiss-light-text text-lg leading-relaxed mb-8">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-foreground uppercase tracking-tight mb-6">
+              Rodent Control FAQs
+            </h2>
+            <p className="text-swiss-light-text text-base leading-relaxed mb-10 font-normal">
               Everything you need to know about identifying, managing, and preventing rodent issues in your space.
             </p>
-            <a className="text-primary font-bold underline underline-offset-4 hover:text-primary/80 transition-colors" href="#">
+            <a
+              className="text-xs font-bold uppercase tracking-widest text-foreground border-b border-foreground pb-0.5 hover:opacity-50 transition-opacity"
+              href="#"
+            >
               Chat with our experts
             </a>
           </div>
-          <div className="lg:col-span-7 border-t border-border">
+          <div className="lg:col-span-7 border-t border-border/40">
             {faqs.map((faq, i) => (
-              <div key={i} className="py-8 border-b border-border">
-                <div
-                  className="flex justify-between items-start gap-4 cursor-pointer group"
+              <div key={i} className="border-b border-border/40">
+                <button
+                  className="w-full py-8 flex justify-between items-start gap-6 text-left group"
                   onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
                 >
-                  <div className="space-y-4">
-                    <h3 className="text-xl font-bold text-foreground leading-tight">{faq.question}</h3>
-                    {openIndex === i && (
-                      <p className="text-swiss-light-text text-lg leading-relaxed">{faq.answer}</p>
-                    )}
-                  </div>
-                  {openIndex === i ? <Minus className="text-muted-foreground group-hover:text-foreground transition-colors mt-1 flex-shrink-0" size={20} /> : <Plus className="text-muted-foreground group-hover:text-foreground transition-colors mt-1 flex-shrink-0" size={20} />}
+                  <h3 className="text-lg font-semibold text-foreground leading-snug tracking-tight">
+                    {faq.question}
+                  </h3>
+                  <span className="text-xl font-light text-muted-foreground group-hover:text-foreground transition-colors mt-0.5 flex-shrink-0 leading-none">
+                    {openIndex === i ? "−" : "+"}
+                  </span>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${
+                    openIndex === i ? "max-h-48 pb-8 opacity-100" : "max-h-0 opacity-0"
+                  }`}
+                >
+                  <p className="text-swiss-light-text text-base leading-relaxed font-normal">
+                    {faq.answer}
+                  </p>
                 </div>
               </div>
             ))}

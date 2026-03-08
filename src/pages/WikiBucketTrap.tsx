@@ -369,26 +369,22 @@ const WikiBucketTrap = () => {
                   Flaws
                 </h3>
               </div>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                {[
-                  "Ineffective against larger rats.",
-                  "Requires regular maintenance/emptying.",
-                  "Takes up significant floor space.",
-                ].map((flaw, i) => (
-                  <div
-                    key={i}
-                    className="relative overflow-hidden bg-[#1a1400] border border-yellow-900/60 px-4 py-4 flex items-start gap-3"
-                    style={{
-                      backgroundImage:
-                        "repeating-linear-gradient(-45deg, transparent, transparent 10px, rgba(228,198,64,0.04) 10px, rgba(228,198,64,0.04) 20px)",
-                    }}
-                  >
-                    <div className="flex-shrink-0 mt-0.5">
-                      <AlertTriangle size={16} className="text-yellow-400" />
-                    </div>
-                    <span className="text-sm text-foreground/90 font-medium">{flaw}</span>
-                  </div>
-                ))}
+              <div className="border-l-[3px] border-red-500 bg-red-50/60 dark:bg-red-950/20 px-5 py-4">
+                <ul className="space-y-3">
+                  {[
+                    "Ineffective against larger rats.",
+                    "Requires regular maintenance/emptying.",
+                    "Takes up significant floor space.",
+                  ].map((flaw, i) => (
+                    <li key={i} className="flex items-start gap-3">
+                      <svg viewBox="0 0 14 14" width="14" height="14" className="flex-shrink-0 mt-[3px]" fill="none">
+                        <line x1="2" y1="2" x2="12" y2="12" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" />
+                        <line x1="12" y1="2" x2="2" y2="12" stroke="#ef4444" strokeWidth="2" strokeLinecap="round" />
+                      </svg>
+                      <span className="text-sm text-[#333] dark:text-foreground/90 leading-[1.6]">{flaw}</span>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </section>
 

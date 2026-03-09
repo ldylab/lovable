@@ -49,36 +49,36 @@ const WikiDeerMouse = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
         <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
-          <p className="text-white font-black uppercase tracking-widest text-sm">Target Profile</p>
+          <p className="text-white font-black uppercase tracking-widest text-base">Target Profile</p>
         </div>
       </div>
 
       {/* Core Identification */}
-      <div className="px-4 pt-4 pb-1">
-        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Core Identification</p>
-        <div className="space-y-2.5 pb-4 border-b border-border">
+      <div className="px-4 pt-5 pb-1">
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Core Identification</p>
+        <div className="space-y-3 pb-5 border-b border-border">
           {[
             { label: "Target", value: "Deer Mouse" },
             { label: "Origin", value: "Native (N. America)" },
             { label: "Region", value: "Most of US/Canada" },
           ].map((row, i) => (
             <div key={i} className="flex items-center justify-between">
-              <span className="text-sm text-muted-foreground">{row.label}</span>
-              <span className="text-sm font-bold text-foreground">{row.value}</span>
+              <span className="text-base text-muted-foreground">{row.label}</span>
+              <span className="text-base font-bold text-foreground">{row.value}</span>
             </div>
           ))}
         </div>
       </div>
 
       {/* Tactical Statistics */}
-      <div className="px-4 pt-4 pb-5">
-        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground mb-4">Tactical Statistics</p>
+      <div className="px-4 pt-5 pb-6">
+        <p className="text-xs font-bold uppercase tracking-[0.22em] text-muted-foreground mb-4">Tactical Statistics</p>
 
         {/* Catch Difficulty bar */}
-        <div className="mb-4">
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-xs font-black uppercase tracking-wide text-foreground">Catch Difficulty</span>
-            <span className="text-xs font-black uppercase tracking-wide text-foreground">Medium</span>
+        <div className="mb-5">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-black uppercase tracking-wide text-foreground">Catch Difficulty</span>
+            <span className="text-sm font-black uppercase tracking-wide text-foreground">Medium</span>
           </div>
           <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
             <div className="h-full w-[55%] bg-amber-400 rounded-full" />
@@ -86,10 +86,10 @@ const WikiDeerMouse = () => {
         </div>
 
         {/* Caution Level bar */}
-        <div className="mb-5">
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-xs font-black uppercase tracking-wide text-foreground">Caution Level</span>
-            <span className="text-xs font-black uppercase tracking-wide text-foreground">Low</span>
+        <div className="mb-6">
+          <div className="flex items-center justify-between mb-2">
+            <span className="text-sm font-black uppercase tracking-wide text-foreground">Caution Level</span>
+            <span className="text-sm font-black uppercase tracking-wide text-foreground">Low</span>
           </div>
           <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
             <div className="h-full w-[25%] bg-amber-400 rounded-full" />
@@ -97,18 +97,18 @@ const WikiDeerMouse = () => {
         </div>
 
         {/* Key rows */}
-        <div className="space-y-2.5 border-t border-border pt-4">
+        <div className="space-y-3 border-t border-border pt-5">
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">Key Hideouts</span>
-            <span className="text-sm font-bold text-foreground">Attics, Garages</span>
+            <span className="text-base text-muted-foreground">Key Hideouts</span>
+            <span className="text-base font-bold text-foreground">Attics, Garages</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">Squeeze Gap</span>
-            <span className="text-sm font-bold text-destructive">1/4 Inch</span>
+            <span className="text-base text-muted-foreground">Squeeze Gap</span>
+            <span className="text-base font-bold text-destructive">1/4 Inch</span>
           </div>
           <div className="flex items-center justify-between">
-            <span className="text-sm text-muted-foreground">Best Bait</span>
-            <span className="text-sm font-bold text-foreground">Peanut butter</span>
+            <span className="text-base text-muted-foreground">Best Bait</span>
+            <span className="text-base font-bold text-foreground">Peanut butter</span>
           </div>
         </div>
       </div>

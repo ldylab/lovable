@@ -140,7 +140,7 @@ const scamEntries = [
 ];
 
 const tierBadge = (tier: string) => {
-  const base = "text-[10px] font-black uppercase tracking-[0.12em] px-2 py-0.5 inline-block";
+  const base = "text-xs font-black uppercase tracking-[0.12em] px-2 py-0.5 inline-block";
   if (tier === "S-TIER") return `${base} bg-primary text-primary-foreground`;
   if (tier === "A-TIER") return `${base} bg-foreground text-background`;
   if (tier === "B-TIER") return `${base} bg-muted text-muted-foreground border border-border`;
@@ -165,7 +165,7 @@ const SectionHeader = ({
     <h2 className={`text-3xl md:text-4xl font-black uppercase tracking-tight ${scam ? "text-destructive" : "text-foreground"}`}>
       {num}. {title}
     </h2>
-    <span className={`text-[10px] font-black uppercase tracking-[0.22em] pb-1 ${scam ? "text-destructive" : "text-muted-foreground"}`}>
+    <span className={`text-xs font-black uppercase tracking-[0.22em] pb-1 ${scam ? "text-destructive" : "text-muted-foreground"}`}>
       {sub}
     </span>
   </div>
@@ -211,10 +211,10 @@ const Wiki = () => {
                   />
                 </div>
                 <div className="p-4">
-                  <p className="font-black text-base uppercase tracking-tight text-foreground leading-tight">
+                  <p className="font-black text-lg uppercase tracking-tight text-foreground leading-tight">
                     {entry.title}
                   </p>
-                  <p className={`text-[10px] font-bold uppercase tracking-wide mt-2 leading-snug ${entry.subtitleClass}`}>
+                  <p className={`text-xs font-bold uppercase tracking-wide mt-2 leading-snug ${entry.subtitleClass}`}>
                     {entry.subtitle}
                   </p>
                 </div>
@@ -240,13 +240,13 @@ const Wiki = () => {
                   </div>
                   <span className={tierBadge(entry.tier)}>{entry.tier}</span>
                 </div>
-                <p className="font-black text-sm uppercase tracking-tight text-foreground leading-tight mb-1">
+                <p className="font-black text-base uppercase tracking-tight text-foreground leading-tight mb-1">
                   {entry.title}
                 </p>
-                <p className="text-xs text-muted-foreground leading-relaxed flex-1">
+                <p className="text-sm text-muted-foreground leading-relaxed flex-1">
                   {entry.desc}
                 </p>
-                <div className={`mt-4 text-[10px] font-black uppercase tracking-[0.15em] px-3 py-2 text-center transition-colors ${i === 0 ? "bg-foreground text-background group-hover:bg-primary group-hover:text-primary-foreground" : "border border-border text-foreground group-hover:border-primary group-hover:text-primary"}`}>
+                <div className={`mt-4 text-xs font-black uppercase tracking-[0.15em] px-3 py-2 text-center transition-colors ${i === 0 ? "bg-foreground text-background group-hover:bg-primary group-hover:text-primary-foreground" : "border border-border text-foreground group-hover:border-primary group-hover:text-primary"}`}>
                   View Specs
                 </div>
               </Link>
@@ -266,10 +266,10 @@ const Wiki = () => {
                 className="group border border-border hover:border-primary transition-colors duration-200 p-4 flex flex-col"
               >
                 <span className={`${tierBadge(entry.tier)} mb-3 self-start`}>{entry.tier}</span>
-                <p className="font-black text-sm uppercase tracking-tight text-foreground leading-tight mb-1">
+                <p className="font-black text-base uppercase tracking-tight text-foreground leading-tight mb-1">
                   {entry.title}
                 </p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {entry.desc}
                 </p>
               </Link>
@@ -294,10 +294,10 @@ const Wiki = () => {
                   </div>
                   <span className={tierBadge(entry.tier)}>{entry.tier}</span>
                 </div>
-                <p className={`font-black text-sm uppercase tracking-tight leading-tight mb-1 ${entry.warning ? "text-destructive" : "text-foreground"}`}>
+                <p className={`font-black text-base uppercase tracking-tight leading-tight mb-1 ${entry.warning ? "text-destructive" : "text-foreground"}`}>
                   {entry.title}
                 </p>
-                <p className="text-xs text-muted-foreground leading-relaxed">
+                <p className="text-sm text-muted-foreground leading-relaxed">
                   {entry.desc}
                 </p>
               </Link>

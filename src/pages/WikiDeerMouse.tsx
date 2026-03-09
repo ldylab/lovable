@@ -54,24 +54,41 @@ const WikiDeerMouse = () => {
         </div>
       </div>
 
+      {/* Section header: Biological Profile */}
+      <div className="px-4 py-2.5 bg-muted/60 border-b border-border">
+        <span className="text-[9px] font-black uppercase tracking-[0.25em] text-muted-foreground">Biological Profile</span>
+      </div>
       <div className="divide-y divide-border">
-        <div className="px-4 py-3">
-          <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground block mb-1">Classification</span>
-          <div className="flex gap-1.5 flex-wrap">
-            <span className="text-[10px] font-bold uppercase tracking-[0.05em] bg-muted text-muted-foreground px-2 py-0.5">Rodent</span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.05em] bg-muted text-muted-foreground px-2 py-0.5">Species Profile</span>
-          </div>
-        </div>
         {[
           { label: "Target Name", value: "The Deer Mouse" },
-          { label: "Danger Level", value: "EXTREME — Biohazard", valueClass: "text-destructive font-black text-xs" },
-          { label: "Size", value: "7–10 cm (body)" },
-          { label: "Primary Threat", value: "Hantavirus, Wire Damage", valueClass: "text-destructive font-semibold text-xs" },
-          { label: "Agility", value: "High — Excellent Climber", valueClass: "font-semibold" },
+          { label: "Species Type", value: "Native (North America)" },
+          { label: "Geographic Range", value: "Pan-North America (Excl. SE US)" },
+          { label: "Proliferation Rate", value: "High (Up to 4 litters/yr)", valueClass: "text-amber-500 font-semibold" },
         ].map((stat, i) => (
-          <div key={i} className="flex items-center justify-between px-4 py-3 gap-3">
-            <span className="text-[10px] font-bold uppercase tracking-[0.15em] text-muted-foreground flex-shrink-0">{stat.label}</span>
-            <span className={`text-sm text-right ${stat.valueClass ?? ""}`}>{stat.value}</span>
+          <div key={i} className="flex items-start justify-between px-4 py-2.5 gap-3">
+            <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground flex-shrink-0 pt-0.5 leading-tight">{stat.label}</span>
+            <span className={`text-[11px] text-right leading-snug ${stat.valueClass ?? "text-foreground"}`}>{stat.value}</span>
+          </div>
+        ))}
+      </div>
+
+      {/* Section header: Tactical Stats */}
+      <div className="px-4 py-2.5 bg-destructive/10 border-y border-border">
+        <span className="text-[9px] font-black uppercase tracking-[0.25em] text-destructive">Tactical Stats</span>
+      </div>
+      <div className="divide-y divide-border">
+        {[
+          { label: "Danger Level", value: "EXTREME (Biohazard — Hantavirus)", valueClass: "text-destructive font-black text-[11px]" },
+          { label: "Eradication Difficulty", value: "Intermediate", valueClass: "text-amber-500 font-semibold" },
+          { label: "Neophobia Level", value: "Low (Curious / Opportunistic)", valueClass: "text-green-600 font-semibold" },
+          { label: "Primary Indoor Zones", value: "Attics, Garages, Basements" },
+          { label: "Min. Entry Gap", value: "1/4 Inch (The Dime Rule)" },
+          { label: "Bait Preference", value: "Seeds, Nuts, Peanut Butter" },
+          { label: "Water Reliance", value: "Low", valueClass: "text-green-600 font-semibold" },
+        ].map((stat, i) => (
+          <div key={i} className="flex items-start justify-between px-4 py-2.5 gap-3">
+            <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground flex-shrink-0 pt-0.5 leading-tight">{stat.label}</span>
+            <span className={`text-[11px] text-right leading-snug ${stat.valueClass ?? "text-foreground"}`}>{stat.value}</span>
           </div>
         ))}
       </div>

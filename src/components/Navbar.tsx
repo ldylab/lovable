@@ -16,14 +16,14 @@ const Navbar = () => {
     <nav className="sticky top-0 z-[100] w-full bg-background/95 backdrop-blur-md border-b border-border">
       <div className="max-w-7xl mx-auto px-6 md:px-12 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a className="text-2xl font-extrabold text-foreground tracking-tighter" href="/">Pest.gg</a>
+        <a className="text-3xl font-extrabold text-foreground tracking-tighter" href="/">Pest.gg</a>
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-4 lg:gap-10">
-          <a className="text-[11px] font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/#process-roadmap">
+          <a className="text-xs font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/#process-roadmap">
             How it works
           </a>
-          <a className="text-[11px] font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/wiki">
+          <a className="text-xs font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/wiki">
             Wiki
           </a>
           <div className="nav-item-academy relative group h-20 flex items-center">
@@ -99,7 +99,7 @@ const Navbar = () => {
               </div>
             </div>
           </div>
-          <a className="text-[11px] font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/about">
+          <a className="text-xs font-bold text-foreground/60 hover:text-foreground uppercase tracking-[0.2em] transition-colors" href="/about">
             About Us
           </a>
         </div>
@@ -126,7 +126,7 @@ const Navbar = () => {
               onKeyDown={(e) => e.key === "Escape" && setSearchOpen(false)}
             />
           </div>
-          <a className="hidden md:block bg-primary hover:bg-safety-yellow text-foreground text-[11px] font-black uppercase tracking-[0.15em] px-4 lg:px-6 py-3 rounded-md transition-colors duration-200 whitespace-nowrap flex-shrink-0" href="#">
+          <a className="hidden md:block bg-primary hover:bg-safety-yellow text-foreground text-xs font-black uppercase tracking-[0.15em] px-4 lg:px-6 py-3 rounded-md transition-colors duration-200 whitespace-nowrap flex-shrink-0" href="#">
             Start Diagnosis
           </a>
           {/* Mobile toggle */}

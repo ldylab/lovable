@@ -21,7 +21,7 @@ const About = () => {
             <div className="flex flex-col md:flex-row items-end justify-between w-full gap-8 md:gap-0">
               <div className="w-full md:w-2/3">
                 <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-extrabold text-foreground uppercase leading-[0.9] tracking-tight">
-                  The Pest Control<br />Industry Is Broken.<br />We Fixed It.
+                  The Pest Control<br />Industry Is <span className="text-amber-400">Broken.</span><br />We <span className="text-amber-400">Fixed</span> It.
                 </h1>
                 <div className="w-32 h-1.5 bg-safety-yellow mt-8" />
               </div>

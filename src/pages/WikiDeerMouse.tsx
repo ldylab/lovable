@@ -39,55 +39,78 @@ const WikiDeerMouse = () => {
   };
 
   const statCard = (
-    <div className="border border-border overflow-hidden">
-      <div className="relative w-full aspect-[4/3] bg-[#0e0e0e] flex items-center justify-center overflow-hidden">
+    <div className="border border-border overflow-hidden bg-background">
+      {/* Hero image with overlay label */}
+      <div className="relative w-full aspect-[4/3] bg-[#0e0e0e] overflow-hidden">
         <img
           src="https://images.pexels.com/photos/10005722/pexels-photo-10005722.jpeg?auto=compress&cs=tinysrgb&w=600&h=450&fit=crop"
           alt="Deer Mouse"
-          className="w-full h-full object-cover opacity-80"
+          className="w-full h-full object-cover"
         />
-        <div className="absolute top-2 right-2 bg-destructive px-3 py-1">
-          <span className="text-[10px] font-black uppercase tracking-[0.2em] text-destructive-foreground">Biohazard</span>
-        </div>
-        <div className="absolute bottom-2 left-2">
-          <span className="text-[9px] font-bold uppercase tracking-[0.15em] text-white/60 font-mono">Peromyscus maniculatus</span>
+        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 px-4 pb-4">
+          <p className="text-white font-black uppercase tracking-widest text-sm">Target Profile</p>
         </div>
       </div>
 
-      {/* Section header: Profile */}
-      <div className="px-4 py-2.5 bg-muted/60 border-b border-border">
-        <span className="text-[9px] font-black uppercase tracking-[0.25em] text-muted-foreground">Profile</span>
-      </div>
-      <div className="divide-y divide-border">
-        {[
-          { label: "Target", value: "Deer Mouse" },
-          { label: "Origin", value: "Native (North America)" },
-          { label: "Region", value: "Most of US & Canada (Excl. SE)" },
-        ].map((stat, i) => (
-          <div key={i} className="flex items-start justify-between px-4 py-2.5 gap-3">
-            <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground flex-shrink-0 pt-0.5 leading-tight">{stat.label}</span>
-            <span className="text-[11px] text-right leading-snug text-foreground">{stat.value}</span>
-          </div>
-        ))}
+      {/* Core Identification */}
+      <div className="px-4 pt-4 pb-1">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground mb-3">Core Identification</p>
+        <div className="space-y-2.5 pb-4 border-b border-border">
+          {[
+            { label: "Target", value: "Deer Mouse" },
+            { label: "Origin", value: "Native (N. America)" },
+            { label: "Region", value: "Most of US/Canada" },
+          ].map((row, i) => (
+            <div key={i} className="flex items-center justify-between">
+              <span className="text-sm text-muted-foreground">{row.label}</span>
+              <span className="text-sm font-bold text-foreground">{row.value}</span>
+            </div>
+          ))}
+        </div>
       </div>
 
-      {/* Section header: Tactics */}
-      <div className="px-4 py-2.5 bg-destructive/10 border-y border-border">
-        <span className="text-[9px] font-black uppercase tracking-[0.25em] text-destructive">Tactics</span>
-      </div>
-      <div className="divide-y divide-border">
-        {[
-          { label: "Catch Difficulty", value: "Medium", valueClass: "text-amber-500 font-semibold" },
-          { label: "Caution Level", value: "Low (Curious & easily trapped)", valueClass: "text-green-600 font-semibold" },
-          { label: "Key Hideouts", value: "Attics, Garages, Basements" },
-          { label: "Squeeze Gap", value: "1/4 Inch (Size of a Dime)" },
-          { label: "Best Bait", value: "Peanut butter, seeds, nuts" },
-        ].map((stat, i) => (
-          <div key={i} className="flex items-start justify-between px-4 py-2.5 gap-3">
-            <span className="text-[9px] font-bold uppercase tracking-[0.12em] text-muted-foreground flex-shrink-0 pt-0.5 leading-tight">{stat.label}</span>
-            <span className={`text-[11px] text-right leading-snug ${stat.valueClass ?? "text-foreground"}`}>{stat.value}</span>
+      {/* Tactical Statistics */}
+      <div className="px-4 pt-4 pb-5">
+        <p className="text-[10px] font-bold uppercase tracking-[0.22em] text-muted-foreground mb-4">Tactical Statistics</p>
+
+        {/* Catch Difficulty bar */}
+        <div className="mb-4">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-xs font-black uppercase tracking-wide text-foreground">Catch Difficulty</span>
+            <span className="text-xs font-black uppercase tracking-wide text-foreground">Medium</span>
           </div>
-        ))}
+          <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+            <div className="h-full w-[55%] bg-amber-400 rounded-full" />
+          </div>
+        </div>
+
+        {/* Caution Level bar */}
+        <div className="mb-5">
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-xs font-black uppercase tracking-wide text-foreground">Caution Level</span>
+            <span className="text-xs font-black uppercase tracking-wide text-foreground">Low</span>
+          </div>
+          <div className="w-full h-1.5 bg-muted rounded-full overflow-hidden">
+            <div className="h-full w-[25%] bg-amber-400 rounded-full" />
+          </div>
+        </div>
+
+        {/* Key rows */}
+        <div className="space-y-2.5 border-t border-border pt-4">
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">Key Hideouts</span>
+            <span className="text-sm font-bold text-foreground">Attics, Garages</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">Squeeze Gap</span>
+            <span className="text-sm font-bold text-destructive">1/4 Inch</span>
+          </div>
+          <div className="flex items-center justify-between">
+            <span className="text-sm text-muted-foreground">Best Bait</span>
+            <span className="text-sm font-bold text-foreground">Peanut butter</span>
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -163,33 +186,30 @@ const WikiDeerMouse = () => {
 
             {/* Visual ID */}
             <section id="visual-id" className="mb-14">
-              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-5">
-                Visual ID: Is This a Deer Mouse?
+              <h3 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground mb-8">
+                Visual Identification
               </h3>
-              <p className="text-foreground text-base md:text-lg leading-relaxed mb-6">
-                Do not confuse it with the standard House Mouse. You can positively identify a deer mouse by three
-                distinct physical features:
-              </p>
-              <ol className="list-decimal list-outside ml-5 space-y-3 text-base">
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-0 border-t border-border">
                 {[
                   {
-                    label: "The Two-Tone Coat",
-                    desc: "It has a tawny brown or grayish back with a sharply defined, pure white underbelly and white feet.",
+                    label: "Coat Pattern",
+                    desc: "Distinctive two-tone coloration. Brown to reddish-brown upper body with a stark, clean white underbelly and feet.",
                   },
                   {
-                    label: "The Bicolored Tail",
-                    desc: "Its tail is dark on top and white on the bottom, and is covered in fine hairs — unlike the house mouse, which has a nearly naked, solid-colored tail.",
+                    label: "Tail Profile",
+                    desc: "Bicolored tail—dark on top, white on bottom—covered in short, fine hairs. Usually equal to or longer than body length.",
                   },
                   {
-                    label: "The Face",
-                    desc: "It possesses large, bulging black eyes and large, thin ears.",
+                    label: "Facial Structure",
+                    desc: "Large, black, protruding eyes designed for low-light navigation. Prominent ears with minimal fur coverage.",
                   },
                 ].map((item, i) => (
-                  <li key={i} className="text-foreground leading-relaxed pl-1">
-                    <span className="font-bold">{item.label}</span> — {item.desc}
-                  </li>
+                  <div key={i} className="pt-6 pb-4 pr-6 border-b border-border sm:border-b-0">
+                    <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-500 mb-3">{item.label}</p>
+                    <p className="text-base text-foreground leading-relaxed">{item.desc}</p>
+                  </div>
                 ))}
-              </ol>
+              </div>
             </section>
 
             {/* The Threat */}

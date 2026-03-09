@@ -20,8 +20,10 @@ const About = () => {
           <div className="relative z-10 w-full h-full max-w-7xl mx-auto px-6 md:px-12 flex flex-col justify-end py-16">
             <div className="flex flex-col md:flex-row items-end justify-between w-full gap-8 md:gap-0">
               <div className="w-full md:w-2/3">
-                <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-extrabold text-foreground uppercase leading-[0.9] tracking-tight">
-                  The Pest Control<br />Industry Is <span className="text-amber-400">Broken.</span><br />We <span className="text-amber-400">Fixed</span> It.
+                <h1 className="font-extrabold text-foreground uppercase leading-[0.9] tracking-tight" style={{ fontSize: 'clamp(1.8rem, 7vw, 7rem)' }}>
+                  <span className="block whitespace-nowrap">The Pest Control</span>
+                  <span className="block whitespace-nowrap">Industry Is <span className="text-amber-400">Broken.</span></span>
+                  <span className="block whitespace-nowrap">We <span className="text-amber-400">Fixed</span> It.</span>
                 </h1>
                 <div className="w-32 h-1.5 bg-safety-yellow mt-8" />
               </div>

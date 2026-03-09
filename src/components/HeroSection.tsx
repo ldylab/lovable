@@ -17,8 +17,10 @@ const HeroSection = () => {
                 Stop Guessing. Start Catching.
               </span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-9xl font-extrabold text-white uppercase leading-[0.9] tracking-tight">
-              The Honest<br />Way To Get<br />Rid Of Mice
+            <h1 className="font-extrabold text-white uppercase leading-[0.9] tracking-tight" style={{ fontSize: 'clamp(1.8rem, 7vw, 7rem)' }}>
+              <span className="block whitespace-nowrap">The Honest</span>
+              <span className="block whitespace-nowrap">Way To Get</span>
+              <span className="block whitespace-nowrap">Rid Of Mice</span>
             </h1>
             <div className="w-32 h-1.5 bg-safety-yellow mt-8" />
           </div>

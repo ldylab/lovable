@@ -1,210 +1,174 @@
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { ArrowRight } from "lucide-react";
+import {
+  Zap,
+  Package,
+  Volume2,
+  Droplets,
+  MousePointerClick,
+  FlaskConical,
+  Wrench,
+} from "lucide-react";
+
+const rodentEntries = [
+  {
+    title: "The Deer Mouse",
+    subtitle: "SPECIES PROFILE — EXTREME BIOHAZARD",
+    subtitleClass: "text-destructive",
+    href: "/wiki/deer-mouse",
+    img: "https://images.pexels.com/photos/10005722/pexels-photo-10005722.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+  },
+  {
+    title: "The House Mouse",
+    subtitle: "SPECIES PROFILE — COMMON PEST",
+    subtitleClass: "text-muted-foreground",
+    href: "/wiki/deer-mouse",
+    img: "https://images.pexels.com/photos/51340/rat-pest-control-rodent-51340.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+  },
+  {
+    title: "The Norway Rat",
+    subtitle: "SPECIES PROFILE — HIGH DAMAGE",
+    subtitleClass: "text-destructive",
+    href: "/wiki/deer-mouse",
+    img: "https://images.pexels.com/photos/5938358/pexels-photo-5938358.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+  },
+  {
+    title: "The Roof Rat",
+    subtitle: "SPECIES PROFILE — AGILE INVADER",
+    subtitleClass: "text-muted-foreground",
+    href: "/wiki/deer-mouse",
+    img: "https://images.pexels.com/photos/4622887/pexels-photo-4622887.jpeg?auto=compress&cs=tinysrgb&w=400&h=300&fit=crop",
+  },
+];
 
 const hardwareEntries = [
   {
-    title: "The Bucket Trap (False Floor Lid)",
+    title: "Bucket Trap",
+    desc: "Multi-catch design for heavy infestations. Maximum efficiency.",
     tier: "S-TIER",
-    target: "Mice",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/416160/pexels-photo-416160.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Package,
   },
   {
-    title: "Snap Trap (Expanded Trigger)",
+    title: "Snap Trap",
+    desc: "Classic mechanical lethal control. High reliability, low cost.",
     tier: "A-TIER",
-    target: "Mice",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: MousePointerClick,
   },
   {
     title: "Electronic Zapper",
+    desc: "High-voltage lethal discharge. Clean disposal, battery powered.",
     tier: "A-TIER",
-    target: "Mice & Rats",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/577514/pexels-photo-577514.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Zap,
   },
   {
-    title: "Bait Station (Tamper-Resistant)",
+    title: "Bait Station",
+    desc: "Secure rodenticide delivery system. Tamper-resistant design.",
     tier: "B-TIER",
-    target: "Rats",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/326278/pexels-photo-326278.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Wrench,
   },
 ];
 
 const exclusionEntries = [
   {
-    title: "Steel Wool Exclusion",
+    title: "Steel Wool",
+    desc: "Standard barrier material. Best used with sealant to prevent rust.",
     tier: "A-TIER",
-    target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/1249611/pexels-photo-1249611.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Package,
   },
   {
     title: "Copper Mesh",
+    desc: "Will not rust. Superior for long-term external weep hole sealing.",
     tier: "A-TIER",
-    target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/2098427/pexels-photo-2098427.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Package,
   },
   {
-    title: "Silicone Caulk Seal",
+    title: "Silicone Caulk",
+    desc: "Flexible sealing for small gaps. Resistant to weathering and pests.",
     tier: "B-TIER",
-    target: "Mice",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/5691528/pexels-photo-5691528.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Droplets,
   },
   {
-    title: "Expanding Spray Foam",
+    title: "Spray Foam",
+    desc: "Temporary solution only. Rodents easily gnaw through standard foam.",
     tier: "C-TIER",
-    target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/1080696/pexels-photo-1080696.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: FlaskConical,
   },
 ];
 
 const scamEntries = [
   {
     title: "Ultrasonic Repellers",
+    desc: "Scientifically unproven. Rodents habituate within 24–48 hours. Total waste of capital.",
     tier: "F-TIER",
-    target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/1472443/pexels-photo-1472443.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Volume2,
+    warning: true,
   },
   {
     title: "Peppermint Oil",
+    desc: "Smells good, does nothing. Anecdotal evidence only. Use real exclusion instead.",
     tier: "F-TIER",
-    target: "Mice",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/1640774/pexels-photo-1640774.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: Droplets,
+    warning: false,
   },
   {
     title: "Glue Traps",
+    desc: "Inhumane and ineffective for large populations. High failure rate for rats.",
     tier: "D-TIER",
-    target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/6474471/pexels-photo-6474471.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: MousePointerClick,
+    warning: false,
   },
   {
-    title: "Natural Predator Urine",
+    title: "Predator Urine",
+    desc: "Biological repellent with zero efficacy in residential settings. Biological hazard risks.",
     tier: "F-TIER",
-    target: "All",
     href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/3361739/pexels-photo-3361739.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
+    Icon: FlaskConical,
+    warning: true,
   },
 ];
 
-const pestEntries = [
-  {
-    title: "The Deer Mouse",
-    target: "Species Profile — EXTREME BIOHAZARD",
-    href: "/wiki/deer-mouse",
-    img: "https://images.pexels.com/photos/10005722/pexels-photo-10005722.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
-  },
-  {
-    title: "House Mouse",
-    target: "Species Profile",
-    href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/10005722/pexels-photo-10005722.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
-  },
-  {
-    title: "Norway Rat",
-    target: "Species Profile",
-    href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/5938358/pexels-photo-5938358.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
-  },
-  {
-    title: "Roof Rat",
-    target: "Species Profile",
-    href: "/wiki/bucket-trap",
-    img: "https://images.pexels.com/photos/4622887/pexels-photo-4622887.jpeg?auto=compress&cs=tinysrgb&w=120&h=120&fit=crop",
-  },
-];
-
-const tierColor = (tier: string) => {
-  if (tier === "S-TIER") return "bg-primary text-primary-foreground";
-  if (tier === "A-TIER") return "bg-foreground text-background";
-  if (tier === "B-TIER") return "bg-muted text-muted-foreground";
-  if (tier === "C-TIER") return "bg-muted text-muted-foreground";
-  if (tier === "D-TIER") return "bg-destructive/20 text-destructive";
-  if (tier === "F-TIER") return "bg-destructive text-destructive-foreground";
-  return "bg-muted text-muted-foreground";
+const tierBadge = (tier: string) => {
+  const base = "text-[10px] font-black uppercase tracking-[0.12em] px-2 py-0.5 inline-block";
+  if (tier === "S-TIER") return `${base} bg-primary text-primary-foreground`;
+  if (tier === "A-TIER") return `${base} bg-foreground text-background`;
+  if (tier === "B-TIER") return `${base} bg-muted text-muted-foreground border border-border`;
+  if (tier === "C-TIER") return `${base} bg-muted text-muted-foreground border border-border`;
+  if (tier === "D-TIER") return `${base} bg-destructive/15 text-destructive border border-destructive/30`;
+  if (tier === "F-TIER") return `${base} bg-destructive text-destructive-foreground`;
+  return `${base} bg-muted text-muted-foreground`;
 };
 
-type WikiEntry = {
+const SectionHeader = ({
+  num,
+  title,
+  sub,
+  scam,
+}: {
+  num: string;
   title: string;
-  tier: string;
-  target: string;
-  href: string;
-  img: string;
-};
-
-type PestEntry = {
-  title: string;
-  target: string;
-  href: string;
-  img: string;
-};
-
-const HardwareRow = ({ entry }: { entry: WikiEntry }) => (
-  <Link
-    to={entry.href}
-    onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-    className="group flex items-center justify-between border border-border hover:border-primary hover:bg-primary/5 transition-all duration-200"
-  >
-    <div className="flex items-center gap-4">
-      <div className="w-[72px] h-[72px] flex-shrink-0 overflow-hidden bg-muted">
-        <img
-          src={entry.img}
-          alt={entry.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div>
-        <span className={`text-[10px] font-black uppercase tracking-[0.15em] px-2 py-0.5 inline-block mb-1 ${tierColor(entry.tier)}`}>
-          {entry.tier}
-        </span>
-        <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
-          {entry.title}
-        </p>
-        <p className="text-xs text-muted-foreground mt-0.5">{entry.target}</p>
-      </div>
-    </div>
-    <ArrowRight
-      size={14}
-      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all mr-5 flex-shrink-0"
-    />
-  </Link>
-);
-
-const PestRow = ({ entry }: { entry: PestEntry }) => (
-  <Link
-    to={entry.href}
-    onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-    className="group flex items-center justify-between border border-border hover:border-primary hover:bg-primary/5 transition-all duration-200"
-  >
-    <div className="flex items-center gap-4">
-      <div className="w-[72px] h-[72px] flex-shrink-0 overflow-hidden bg-muted">
-        <img
-          src={entry.img}
-          alt={entry.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-      </div>
-      <div>
-        <p className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
-          {entry.title}
-        </p>
-        <p className="text-xs text-muted-foreground mt-0.5">{entry.target}</p>
-      </div>
-    </div>
-    <ArrowRight
-      size={14}
-      className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all mr-5 flex-shrink-0"
-    />
-  </Link>
+  sub: string;
+  scam?: boolean;
+}) => (
+  <div className={`flex items-end justify-between border-b pb-3 mb-8 ${scam ? "border-destructive/40" : "border-border"}`}>
+    <h2 className={`text-3xl md:text-4xl font-black uppercase tracking-tight ${scam ? "text-destructive" : "text-foreground"}`}>
+      {num}. {title}
+    </h2>
+    <span className={`text-[10px] font-black uppercase tracking-[0.22em] pb-1 ${scam ? "text-destructive" : "text-muted-foreground"}`}>
+      {sub}
+    </span>
+  </div>
 );
 
 const Wiki = () => {
@@ -212,97 +176,135 @@ const Wiki = () => {
     <div className="min-h-screen bg-background">
       <Navbar />
 
-      <div className="w-full max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
-        <div className="mb-14 max-w-2xl">
-          <span className="text-primary font-bold uppercase tracking-widest text-xs mb-4 block">
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-16 md:py-24">
+
+        {/* Hero */}
+        <div className="mb-16 border-l-[5px] border-foreground pl-6">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-black uppercase leading-[0.9] tracking-tight text-foreground">
             Knowledge Base
-          </span>
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold uppercase leading-[1] tracking-tight text-foreground">
-            The Pest.gg<br />Wiki
           </h1>
-          <p className="text-muted-foreground text-lg leading-relaxed mt-6">
-            Every trap, every pest, every material — documented and rated. No fluff, no affiliate filler.
+          <p className="text-base font-black uppercase tracking-tight text-foreground mt-3">
+            The Pest.GG Wiki
+          </p>
+          <p className="text-muted-foreground text-base leading-relaxed mt-3 max-w-lg">
+            Every trap, every pest, every material — documented and rated. No fluff, no
+            affiliate filler. Just industrial-grade pest management data.
           </p>
         </div>
 
-        {/* Hardware */}
-        <div id="hardware" className="mb-16">
-          <div className="mb-6 pb-4 border-b border-border">
-            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Hardware</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {hardwareEntries.map((entry, i) => (
-              <HardwareRow key={i} entry={entry} />
-            ))}
-          </div>
-        </div>
-
-        {/* Exclusion Materials */}
-        <div id="exclusion" className="mb-16">
-          <div className="mb-6 pb-4 border-b border-border">
-            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Exclusion Materials</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {exclusionEntries.map((entry, i) => (
-              <HardwareRow key={i} entry={entry} />
-            ))}
-          </div>
-        </div>
-
-        {/* Scams */}
-        <div id="scams" className="mb-16">
-          <div className="mb-6 pb-4 border-b border-destructive/30 flex items-center gap-3">
-            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Scams</h2>
-            <span className="text-[10px] font-black uppercase tracking-[0.1em] bg-destructive/10 text-destructive px-2 py-0.5">
-              Avoid These
-            </span>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {scamEntries.map((entry, i) => (
+        {/* 01. Rodents */}
+        <div id="rodents" className="mb-20">
+          <SectionHeader num="01" title="Rodents" sub="Species Identification" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {rodentEntries.map((entry, i) => (
               <Link
                 key={i}
                 to={entry.href}
                 onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
-                className="group flex items-center justify-between border border-destructive/20 hover:border-destructive hover:bg-destructive/5 transition-all duration-200"
+                className="group border border-border hover:border-primary transition-colors duration-200"
               >
-                <div className="flex items-center gap-4">
-                  <div className="w-[72px] h-[72px] flex-shrink-0 overflow-hidden bg-muted">
-                    <img
-                      src={entry.img}
-                      alt={entry.title}
-                      className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300"
-                    />
-                  </div>
-                  <div>
-                    <span className={`text-[10px] font-black uppercase tracking-[0.15em] px-2 py-0.5 inline-block mb-1 ${tierColor(entry.tier)}`}>
-                      {entry.tier}
-                    </span>
-                    <p className="text-sm font-bold text-foreground group-hover:text-destructive transition-colors">
-                      {entry.title}
-                    </p>
-                    <p className="text-xs text-muted-foreground mt-0.5">{entry.target}</p>
-                  </div>
+                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                  <img
+                    src={entry.img}
+                    alt={entry.title}
+                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                  />
                 </div>
-                <ArrowRight
-                  size={14}
-                  className="text-muted-foreground group-hover:text-destructive group-hover:translate-x-1 transition-all mr-5 flex-shrink-0"
-                />
+                <div className="p-3">
+                  <p className="font-black text-sm uppercase tracking-tight text-foreground leading-tight">
+                    {entry.title}
+                  </p>
+                  <p className={`text-[10px] font-bold uppercase tracking-wide mt-1 leading-snug ${entry.subtitleClass}`}>
+                    {entry.subtitle}
+                  </p>
+                </div>
               </Link>
             ))}
           </div>
         </div>
 
-        {/* Rodents */}
-        <div id="biology" className="mb-16">
-          <div className="mb-6 pb-4 border-b border-border">
-            <h2 className="text-2xl md:text-3xl font-black uppercase tracking-tight text-foreground">Rodents</h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {pestEntries.map((entry, i) => (
-              <PestRow key={i} entry={entry} />
+        {/* 02. Hardware */}
+        <div id="hardware" className="mb-20">
+          <SectionHeader num="02" title="Hardware" sub="Deployment Tools" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {hardwareEntries.map((entry, i) => (
+              <Link
+                key={i}
+                to={entry.href}
+                onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+                className={`group border hover:border-primary transition-colors duration-200 p-4 flex flex-col ${i === 0 ? "border-foreground" : "border-border"}`}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className="w-9 h-9 flex items-center justify-center border border-border text-foreground group-hover:text-primary group-hover:border-primary transition-colors">
+                    <entry.Icon size={18} strokeWidth={1.8} />
+                  </div>
+                  <span className={tierBadge(entry.tier)}>{entry.tier}</span>
+                </div>
+                <p className="font-black text-sm uppercase tracking-tight text-foreground leading-tight mb-1">
+                  {entry.title}
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed flex-1">
+                  {entry.desc}
+                </p>
+                <div className={`mt-4 text-[10px] font-black uppercase tracking-[0.15em] px-3 py-2 text-center transition-colors ${i === 0 ? "bg-foreground text-background group-hover:bg-primary group-hover:text-primary-foreground" : "border border-border text-foreground group-hover:border-primary group-hover:text-primary"}`}>
+                  View Specs
+                </div>
+              </Link>
             ))}
           </div>
         </div>
+
+        {/* 03. Exclusion */}
+        <div id="exclusion" className="mb-20">
+          <SectionHeader num="03" title="Exclusion" sub="Structure Fortification" />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {exclusionEntries.map((entry, i) => (
+              <Link
+                key={i}
+                to={entry.href}
+                onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+                className="group border border-border hover:border-primary transition-colors duration-200 p-4 flex flex-col"
+              >
+                <span className={`${tierBadge(entry.tier)} mb-3 self-start`}>{entry.tier}</span>
+                <p className="font-black text-sm uppercase tracking-tight text-foreground leading-tight mb-1">
+                  {entry.title}
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {entry.desc}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+
+        {/* 04. Scams */}
+        <div id="scams" className="mb-16">
+          <SectionHeader num="04" title="Scams" sub="Avoid at All Costs" scam />
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {scamEntries.map((entry, i) => (
+              <Link
+                key={i}
+                to={entry.href}
+                onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+                className={`group border transition-colors duration-200 p-4 flex flex-col ${entry.warning ? "border-destructive/60 bg-destructive/5 hover:border-destructive" : "border-border hover:border-destructive/50 hover:bg-destructive/5"}`}
+              >
+                <div className="flex items-start justify-between mb-4">
+                  <div className={`w-8 h-8 flex items-center justify-center ${entry.warning ? "text-destructive" : "text-muted-foreground"}`}>
+                    <entry.Icon size={18} strokeWidth={1.8} />
+                  </div>
+                  <span className={tierBadge(entry.tier)}>{entry.tier}</span>
+                </div>
+                <p className={`font-black text-sm uppercase tracking-tight leading-tight mb-1 ${entry.warning ? "text-destructive" : "text-foreground"}`}>
+                  {entry.title}
+                </p>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {entry.desc}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+
       </div>
 
       <Footer />

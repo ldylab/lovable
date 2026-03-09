@@ -203,18 +203,18 @@ const Wiki = () => {
                 onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
                 className="group border border-border hover:border-primary transition-colors duration-200"
               >
-                <div className="aspect-[4/3] overflow-hidden bg-muted">
+                <div className="aspect-[3/4] overflow-hidden bg-muted">
                   <img
                     src={entry.img}
                     alt={entry.title}
                     className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="p-3">
-                  <p className="font-black text-sm uppercase tracking-tight text-foreground leading-tight">
+                <div className="p-4">
+                  <p className="font-black text-base uppercase tracking-tight text-foreground leading-tight">
                     {entry.title}
                   </p>
-                  <p className={`text-[10px] font-bold uppercase tracking-wide mt-1 leading-snug ${entry.subtitleClass}`}>
+                  <p className={`text-[10px] font-bold uppercase tracking-wide mt-2 leading-snug ${entry.subtitleClass}`}>
                     {entry.subtitle}
                   </p>
                 </div>
